@@ -3,9 +3,9 @@
 ### Projeto Store
 
 - projeto feito com React funcional 
+- JavaScript
 - Ultilizando Api do mercado livre
 
 
 Projeto criado para Resolver problemas e dificildades que usuarios passam ao acessar sites de compras !!
-
 

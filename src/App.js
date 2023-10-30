@@ -1,12 +1,19 @@
 import React from "react";
-import Home from './front-end/pages/Home'
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home.jsx'
+
+
 
 
 function App() {
 
   return (
     <div className="App">
-      <Home />
+      {/* <Home /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/coffees" element={<CoffeeList />} /> */}
+      </Routes>
     </div>
   );
 }

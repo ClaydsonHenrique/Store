@@ -40,7 +40,6 @@ function Home() {
 
   return (
     <section >
-      <Filteres />
       <div className="section-home">
 
         <div className=" renderProducts">

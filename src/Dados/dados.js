@@ -4409,3 +4409,38 @@ export const vansRoupas = [
 ]
 
 export const allProdutcts = [...adidasShoes, ...nikeShoes, ...nikeRoupas, ...adidasRoupas, ...vansShoes, ...vansRoupas]
+
+
+const produtosComPromo = allProdutcts.filter((produto) => {
+  // Filtra os produtos onde pelo menos uma cor tem pricePromo diferente de vazio.
+  return produto.cores.some((cor) => cor.pricePromo !== '');
+});
+
+console.log(produtosComPromo)
+console.log(allProdutcts.length)
+
+let data = localStorage.getItem("dataAtual");
+
+
+const dataAtual = new Date();
+
+// gerando dia
+const dia = dataAtual.getDate() + 1;
+const mes = dataAtual.getMonth() + 1;
+const ano = dataAtual.getFullYear();
+const dataFormatada = `${dia}/${mes}/${ano}`;
+
+// numeros aleatorios
+function gerarNumeroAleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+if (!data) {
+  localStorage.setItem("dataAtual", dataFormatada);
+  const numeroAleatorio = gerarNumeroAleatorio(1, 100);
+  console.log('entrou', numeroAleatorio)
+}
+if (data && data !== dataFormatada) {
+  const numeroAleatorio = gerarNumeroAleatorio(1, 100);
+  console.log('trueeeee', numeroAleatorio)
+}

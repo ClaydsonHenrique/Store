@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { filterGenero, filterByIdOrName } from '../filterProducts/filterProducts.js';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { filterProduct } from '../redux/action/index.js';
 import { allProdutcts } from '../Dados/dados.js';
@@ -101,12 +101,15 @@ const Filteres = () => {
           pesquisar
         </button>
       </label>
-      <div>
-        <p>Mulher</p>
-        <p>Homem</p>
-        
-      </div>
-
+      <nav>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </nav>
     </section>
   );
 };

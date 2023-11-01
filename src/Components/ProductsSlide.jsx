@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
-import { useDispatch } from 'react-redux';
+import { Autoplay, Navigation, } from 'swiper/modules';
+import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '../redux/action/index.js';
 
 function ProductSlider({ products, brandName }) {
@@ -34,10 +34,14 @@ function ProductSlider({ products, brandName }) {
       </div>
       <Swiper
         pagination={{ clickable: true }}
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         slidesPerView={4}
         className="mySwiper center-swiper"
         loop={true}
+        autoplay={{
+          delay: 10000,
+          disableOnInteraction: false,
+        }}
       >
         {products.map(({ categoria, cores, genero, id, marca, name, text, tipo }, index) => (
           <SwiperSlide key={index}>
@@ -64,8 +68,7 @@ function ProductSlider({ products, brandName }) {
               }
               {activeContainer === index ? (
                 <div>
-                  <button>Comprar</button>
-                  <button onClick={() => dispatch(addProduct(name, brandName))}>Adicionar ao Carrinho</button>
+                  <button>Detalhes</button>
                 </div>
               ) : null}
             </div>

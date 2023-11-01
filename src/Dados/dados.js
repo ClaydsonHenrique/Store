@@ -179,7 +179,6 @@ export const adidasShoes = [
     id: 2,
     marca: 'adidas',
     name: 'Chuteira X Speedportal.1 Society',
-    marca: 'adidas',
     tipo: 'calçados',
     genero: '***UNISSEX, FORMATO GRANDE***',
     text: 'Para pés mais finos, recomendamos que compre um tamanho menor do que o de costume.',
@@ -2258,7 +2257,7 @@ export const nikeRoupas = [
     genero: 'Mulher',
     tipo: 'Roupas',
     text: '',
-    categoria: 'Blusa-Moletom',
+    categoria: 'Moletom',
     cores: [
       {
         corId: 0,
@@ -2300,7 +2299,7 @@ export const nikeRoupas = [
     genero: 'Mulher',
     tipo: 'Roupas',
     text: '',
-    categoria: 'Calça-Moletom',
+    categoria: 'Moletom',
     cores: [
       {
         corId: 0,
@@ -4417,7 +4416,6 @@ const produtosComPromo = allProdutcts.filter((produto) => {
 });
 
 console.log(produtosComPromo)
-console.log(allProdutcts.length)
 
 let data = localStorage.getItem("dataAtual");
 

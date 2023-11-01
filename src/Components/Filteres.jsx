@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
 import { filterGenero, filterByIdOrName } from '../filterProducts/filterProducts.js';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { filterProduct } from '../redux/action/index.js';
 import { allProdutcts } from '../Dados/dados.js';
+import './filteres.css';
 
 const Filteres = () => {
   const [productsfilter, setProductsFilter] = useState([]);
-  const [checkFeme, setCheckFeme] = useState(false);
-  const [checkMale, setCheckMale] = useState(false);
-  const [originalsChecked, setOriginalsChecked] = useState(false);
-  const [basqueteChecked, setBasqueteChecked] = useState(false);
-  const [sportswearChecked, setSportswearChecked] = useState(false);
-  const [runningChecked, setRunningChecked] = useState(false);
-  const [chuteirasChecked, setChuteirasChecked] = useState(false);
-  const [calcadoChecked, setCalcadoChecked] = useState(false);
-  const [roupasChecked, setRoupasChecked] = useState(false);
   const [searchProduct, setSearchProduct] = useState('');
   const [disabled, setDisabled] = useState(true);
+  const [hoveredCategory, setHoveredCategory] = useState(null);
+  const [subFilter, setsubFilter] = useState([])
+  const [bgColor, setBgColor] = useState(false)
 
   const history = useNavigate();
   const dispatch = useDispatch();
@@ -29,64 +24,32 @@ const Filteres = () => {
     }
   };
 
-  const handleCheckboxChange = (name, value) => {
-    switch (name) {
-      case 'calcadoChecked':
-        setCalcadoChecked(value);
-        break;
-      case 'roupasChecked':
-        setRoupasChecked(value);
-        break;
-      case 'generoChecked':
-        setCheckFeme(value);
-        break;
-      case 'checkMale':
-        setCheckMale(value);
-        break;
-      case 'originalsChecked':
-        setOriginalsChecked(value);
-        break;
-      case 'basqueteChecked':
-        setBasqueteChecked(value);
-        break;
-      case 'sportswearChecked':
-        setSportswearChecked(value);
-        break;
-      case 'runningChecked':
-        setRunningChecked(value);
-        break;
-      case 'chuteirasChecked':
-        setChuteirasChecked(value);
-        break;
-      default:
-        break;
-    }
+  const handleSlideMouseEnter = (param) => {
+    setHoveredCategory(param);
+    const filterHomem = filterGenero(param, allProdutcts);
+    setProductsFilter(filterHomem);
+    setBgColor(true)
   };
 
-  const handleChange = ({ target }) => {
-    const { name, value, checked } = target;
-    const selectFilter = productsfilter.length > 0 ? productsfilter : allProdutcts;
-
-    handleCheckboxChange(name, checked);
-    if (checked) {
-      const filteredProducts = filterGenero(value, selectFilter);
-      setProductsFilter((prevProducts) => [...prevProducts, ...filteredProducts]);
-      console.log(filteredProducts)
-      dispatch(filterProduct(productsfilter));
-    } else {
-      const filter = allProdutcts.filter((produto) => produto.genero !== value || produto.categoria !== value || produto.tipo !== value)
-      console.log(filter, 'tretsfds', value)
-    }
+  const handleSlideMouseLeave = () => {
+    setHoveredCategory(null);
+    setProductsFilter([]);
+    setBgColor(false)
   };
 
   const handleClick = async () => {
     const filterforName = filterByIdOrName(null, searchProduct);
     setProductsFilter(filterforName);
-    dispatch(filterProduct(productsfilter));
+    dispatch(filterProduct(filterforName));
     history('/');
-    console.log(filterforName)
   };
 
+  const handleclikFilter = (param) => {
+    const filter = filterGenero(param, productsfilter)
+    setsubFilter(filter)
+  }
+
+  console.log(subFilter)
   return (
     <section>
       <h1>Store Cacfuu</h1>
@@ -102,15 +65,176 @@ const Filteres = () => {
         </button>
       </label>
       <nav>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+        <ul style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+          <li value='Homem'>
+            <div
+              onMouseEnter={() => handleSlideMouseEnter("Homem")}
+              onMouseLeave={handleSlideMouseLeave}
+              style={{ position: 'relative', width: '300px', display: 'flex', justifyContent: 'center', flexDirection: 'column', }}
+            >
+              <button className='filterButton'>Homens</button>
+            </div>
+          </li>
+          <li value='Mulher'>
+            <div
+              onMouseEnter={() => handleSlideMouseEnter('Mulher')}
+              onMouseLeave={handleSlideMouseLeave}
+              style={{ position: 'relative', width: '300px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+              className='filterButton'
+            >
+              <button className='filterButton'>Mulher</button>
+            </div>
+          </li>
+          <li value='Infantil'>
+            <div onMouseEnter={() => handleSlideMouseEnter('Infantil')} onMouseLeave={handleSlideMouseLeave}
+              style={{ position: 'relative', width: '300px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+            >
+              <button className='filterButton'>Crianças</button>
+            </div>
+          </li>
+          <li value='calçados'>
+            <div onMouseEnter={() => handleSlideMouseEnter('calçados')} onMouseLeave={handleSlideMouseLeave}
+              style={{ position: 'relative', width: '300px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+            >
+              <button className='filterButton'>calçados</button>
+            </div>
+          </li>
+          <li value='Roupas'>
+            <div onMouseEnter={() => handleSlideMouseEnter('Roupas')} onMouseLeave={handleSlideMouseLeave}
+              style={{ position: 'relative', width: '300px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+            >
+              <button className='filterButton'>Roupas</button>
+            </div>
+          </li>
         </ul>
       </nav>
-    </section>
+      <div>
+        {hoveredCategory === 'Roupas' && (
+          <div
+            className='hidenFIlter table-transition visible table-entrance'
+            onMouseEnter={() => handleSlideMouseEnter('Roupas')} onMouseLeave={handleSlideMouseLeave}
+          >
+            <table className="">
+              <tbody>
+                <tr>
+                  <td>Calçados</td>
+                </tr>
+                <tr>
+                  <td><button>Chuteira</button></td>
+                </tr>
+                <tr>
+                  <td><button>Clássicos</button></td>
+                </tr>
+                <tr>
+                  <td><button>Corrida</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+        {hoveredCategory === 'calçados' && (
+          <div onMouseEnter={() => handleSlideMouseEnter('calçados')} onMouseLeave={handleSlideMouseLeave} >
+            <table className="table-transition visible table-entrance">
+              <tbody>
+                <tr>
+                  <td>Calçados</td>
+                </tr>
+                <tr>
+                  <td><button>Chuteira</button></td>
+                </tr>
+                <tr>
+                  <td><button>Clássicos</button></td>
+                </tr>
+                <tr>
+                  <td><button>Corrida</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+        {hoveredCategory === 'Infantil' && (
+          <div onMouseEnter={() => handleSlideMouseEnter('Infantil')} onMouseLeave={handleSlideMouseLeave}
+          >
+            <table className="table-transition visible table-entrance">
+              <tbody>
+                <tr>
+                  <td>Calçados</td>
+                </tr>
+                <tr>
+                  <td><button>Chuteira</button></td>
+                </tr>
+                <tr>
+                  <td><button>Clássicos</button></td>
+                </tr>
+                <tr>
+                  <td><button>Corrida</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+        {hoveredCategory === 'Mulher' && (
+          <div onMouseEnter={() => handleSlideMouseEnter('Mulher')}
+            onMouseLeave={handleSlideMouseLeave}
+          >
+            <table className="table-transition visible table-entrance">
+              <tbody>
+                <tr>
+                  <td>Calçados</td>
+                </tr>
+                <tr>
+                  <td><button>Chuteira</button></td>
+                </tr>
+                <tr>
+                  <td><button>Clássicos</button></td>
+                </tr>
+                <tr>
+                  <td><button>Corrida</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+        {hoveredCategory === 'Homem' && (
+          <div className='hidenFIlter table-transition visible table-entrance'
+            onMouseEnter={() => handleSlideMouseEnter("Homem")}
+            onMouseLeave={handleSlideMouseLeave}
+          >
+            <div >
+              <h2>Calçados</h2>
+              <div className='containerLInks'>
+                <Link className='links' onClick={() => handleclikFilter("Futebol")}>Chuteira</Link>
+                <Link className='links' onClick={() => handleclikFilter("Originals")}>Clássicos</Link>
+                <Link className='links' onClick={() => handleclikFilter("Sportswear")}>Sportswear</Link>
+                <Link className='links' onClick={() => handleclikFilter("Running")}>Corrida</Link>
+                <Link className='links' onClick={() => handleclikFilter("Basquete")}>Basquete</Link>
+              </div>
+            </div>
+            <div>
+              <h2>Calçados</h2>
+              <div className='containerLInks'>
+                <Link className='links' onClick={() => handleclikFilter("Camiseta")}>Camiseta</Link>
+                <Link className='links' onClick={() => handleclikFilter("Moletom")}>Moletom</Link>
+                <Link className='links' onClick={() => handleclikFilter("Jaqueta")}>Jaqueta</Link>
+                <Link className='links' onClick={() => handleclikFilter("Short")}>Short</Link>
+                <Link className='links' onClick={() => handleclikFilter("Calça")}>Calça</Link>
+              </div>
+            </div>
+            <div>
+              <h2>Marca</h2>
+              <div >
+                <Link className='links' onClick={() => handleclikFilter("Camiseta")}>Camiseta</Link>
+                <Link className='links' onClick={() => handleclikFilter("Moletom")}>Moletom</Link>
+                <Link className='links' onClick={() => handleclikFilter("Jaqueta")}>Jaqueta</Link>
+                <Link className='links' onClick={() => handleclikFilter("Short")}>Short</Link>
+                <Link className='links' onClick={() => handleclikFilter("Calça")}>Calça</Link>
+              </div>
+            </div>
+          </div >
+        )
+        }
+      </div >
+    </section >
   );
 };
 

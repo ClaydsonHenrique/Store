@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { addProduct } from '../redux/action/index.js';
+
 import Filteres from "../Components/Filteres.jsx";
 import RenderNike from "../Components/RenderNike.jsx";
 import RenderAdidas from "../Components/RenderAdidas.jsx";
@@ -19,7 +23,8 @@ import 'swiper/css/scrollbar';
 
 function Home() {
   const [produtos, setProdutos] = useState([]);
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
   useEffect(() => {
     const randomProducts = getRandomProdutos(27);
     setProdutos(randomProducts);
@@ -38,6 +43,11 @@ function Home() {
     return randomShoes;
   }
 
+  const detailProduct = (id) => {
+    dispatch(addProduct(id))
+    navigate(`/detalhes/${id}`)
+  }
+
   return (
     <section >
       <div className="section-home">
@@ -49,7 +59,7 @@ function Home() {
         </div>
         <section style={{ display: 'flex', flexWrap: 'wrap', width: '100%', justifyContent: 'center' }}>
           {produtos.map(
-            ({ categoria, cores, genero, marca, name }, index) => (
+            ({ categoria, cores, genero, marca, name, id }, index) => (
               <div key={index} style={{ width: '400px', margin: '10px 40px' }}>
                 {index >= 0 && (
                   <div className="products">
@@ -75,8 +85,7 @@ function Home() {
                       }
                     </>
                     <div className="container-tamanho"></div>
-                    <button>mais detalhes</button>
-                    <button>comprar</button>
+                    <button onClick={() => detailProduct(id)} >mais detalhes</button>
                   </div>
                 )}
               </div>

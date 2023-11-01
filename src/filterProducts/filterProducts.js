@@ -32,7 +32,6 @@ export const searchProduct = (idOrName) => {
 };
 
 export const filterGenero = (genero, allProdutct) => {
-  console.log(genero)
   const filter = allProdutct.filter((produto) => produto.categoria.includes(genero) ||
     produto.genero.includes(genero) || produto.tipo.includes(genero)
   )

@@ -49,10 +49,10 @@ const Filteres = () => {
     setsubFilter(filter)
   }
 
-  console.log(subFilter)
+  console.log(searchProduct)
   return (
     <section>
-      <h1>Store Cacfuu</h1>
+      <Link to='/'> <h1>Store Cacfuu</h1></Link>
       <label htmlFor="search">
         <input
           type="text"

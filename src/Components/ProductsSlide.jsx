@@ -5,6 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation, } from 'swiper/modules';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addProduct } from '../redux/action/index.js';
 
 function ProductSlider({ products, brandName }) {
@@ -12,6 +13,8 @@ function ProductSlider({ products, brandName }) {
   const [slideNumbers, setSlideNumbers] = useState(Array(products.length).fill(0));
 
   const dispatch = useDispatch();
+  const navigate = useNavigate()
+
 
   const handleSlideMouseEnter = (index, slideIndex) => {
     setActiveContainer(index);
@@ -26,6 +29,10 @@ function ProductSlider({ products, brandName }) {
     setActiveContainer(null);
     setSlideNumbers(Array(products.length).fill(0));
   };
+  const detailProduct = (id) => {
+    dispatch(addProduct(id))
+    navigate(`/detalhes/${id}`)
+  }
 
   return (
     <section className="product-slider">
@@ -68,7 +75,7 @@ function ProductSlider({ products, brandName }) {
               }
               {activeContainer === index ? (
                 <div>
-                  <button>Detalhes</button>
+                  <button onClick={() => detailProduct(id)}>Detalhes</button>
                 </div>
               ) : null}
             </div>

@@ -8,6 +8,8 @@ export const adidasShoes = [
     tipo: 'calçados',
     text: 'Para pés mais finos, recomendamos que compre um tamanho menor do que o de costume.',
     categoria: 'Originals',
+    titleDescrition: 'ESTILO COM AMORTECIMENTO E OUSADIA PARA O DIA A DIA',
+    descrition: 'O estilo dos anos 90 era ousado. Por isso, não é surpresa que o tênis adidas OZWEEGO também seja. Ele tem raízes nessa era autêntica, com inspiração nos tênis de corrida da época. Hoje, o formato esculpido é uma dose de atitude que você pode usar com qualquer coisa no seu guarda-roupa. Detalhes metálicos e refletivos tornam este par ainda mais sofisticado.',
     cores: [
       {
         corId: 0,
@@ -15,7 +17,7 @@ export const adidasShoes = [
         priceOriginal: 'R$999,99',
         pricePromo: 'R$599,99',
         images: [
-          'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d4cde377d04d4b818dd4435d93e1b4fb_9366/Tenis_OZWEEGO_Cinza_ID9822_01_standard.jpg',
+          'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d4cde377d04d4b818dd4435d93e1b4fb_9366/Tênis OZWEEGOTenis_OZWEEGO_Cinza_ID9822_01_standard.jpg',
           'https://assets.adidas.com/videos/ar_1,w_1080,c_fill,q_auto,f_auto/a3eb974da8094e4cb369bc723a61dcf9_d98c/Tenis_OZWEEGO_Cinza_ID9822_video.mp4',
           'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b51f8193885d40d5b52f57412411286a_9366/Tenis_OZWEEGO_Cinza_ID9822_04_standard.jpg',
           'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6f438b2603154d05986131ff94d0b586_9366/Tenis_OZWEEGO_Cinza_ID9822_05_standard.jpg',
@@ -91,6 +93,9 @@ export const adidasShoes = [
     genero: '***UNISSEX, TAMANHO JUSTO***',
     text: 'Para pés largos recomendamos comprar o tamanho maior.',
     categoria: 'Sportswear',
+    titleDescrition: 'FEITO PARCIALMENTE COM MATERIAIS RECICLADOS PARA USO NO DIA A DIA',
+    descrition: `O tênis de couro branco, uma peça de moda atemporal, agora reimaginado com você em mente. Porque seu estilo também não fica parado. E looks clássicos exigem ser reimaginados. A entressola elevada e a silhueta volumosa trazem uma atitude moderna a este look icônico. As Três Listras exibem o inconfundível DNA adidas.     
+    Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reutilizado.Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -183,6 +188,8 @@ export const adidasShoes = [
     genero: '***UNISSEX, FORMATO GRANDE***',
     text: 'Para pés mais finos, recomendamos que compre um tamanho menor do que o de costume.',
     categoria: 'Futebol',
+    titleDescrition: 'DEIXE SEUS LIMITES PARA TRÁS COM ESTA CHUTEIRA FEITA PARCIALMENTE COM MATERIAIS RECICLADOS',
+    descrition: 'Mente. Corpo. Chuteira. Conectados em um piscar de olhos. Calce a adidas X Speedportal para desbloquear a velocidade em todas as suas dimensões. Leve e envolvente, o cabedal desta chuteira tem colarinho elástico e trava de carbono no calcanhar para um ajuste seguro em alta velocidade. Sobre um solado de borracha sulcado, sua entressola Lightstrike de perfil baixo mantém suas reações mais rápidas em superfícies artificiais de society.',
     cores: [
       {
         corId: 0,
@@ -190,7 +197,7 @@ export const adidasShoes = [
         priceOriginal: 'R$1.499,99',
         pricePromo: 'R$699,99',
         images: [
-          'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7aed9d4f5b0d4e508356af5d0115be63_9366/Chuteira_X_Speedportal.1_Society_Rosa_GZ2440_22_model.jpg',
+          'https://assetChuteira X Speedportal.1 Societys.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7aed9d4f5b0d4e508356af5d0115be63_9366/Chuteira_X_Speedportal.1_Society_Rosa_GZ2440_22_model.jpg',
           'https://assets.adidas.com/videos/ar_1,w_720,c_fill,q_auto,f_auto/adb19fb33d174a88ae02af7300b220d6_d98c/Chuteira_X_Speedportal.1_Society_Rosa_GZ2440_video.mp4',
           'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0f71d0f500694ec385a4af5e00a3a7da_9366/Chuteira_X_Speedportal.1_Society_Rosa_GZ2440_01_standard.jpg',
           'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1740bdb2b11c4ee2ae55af720091957f_9366/Chuteira_X_Speedportal.1_Society_Rosa_GZ2440_010_hover_standard.jpg',
@@ -233,6 +240,10 @@ export const adidasShoes = [
     genero: 'Homem',
     text: '',
     categoria: 'Running',
+    titleDescrition: 'PARA A SUA ENERGIA DE CORRER TODOS OS DIAS',
+    descrition: `Para quem é fã de corrida, a atividade mais empolgante do dia é sair para correr. Calce este tênis adidas e percorra quilômetros com conforto total. O cabedal respirável mantém os pés refrescados nos dias mais quentes. O amortecimento leve deixa cada passo mais prazeroso.
+
+    ste produto é feito com conteúdo reciclado como parte da nossa meta de eliminar o lixo plástico. 20% das peças usadas para fazer o cabedal são feitas com um mínimo de 50% de conteúdo reciclado.`,
     cores: [
       {
         corId: 0,
@@ -346,6 +357,10 @@ export const adidasShoes = [
     genero: '***UNISSEX, TAMANHO JUSTO***',
     text: 'Para pés largos recomendamos comprar o tamanho maior.',
     categoria: 'Sportswear',
+    titleDescrition: 'CONFORTO GARANTIDO, FEITO PARCIALMENTE DE MATERIAIS RECICLADOS',
+    descrition: ` Elegante, esportivo e superconfortável. Combinando perfeitamente com jeans, vestidos e praticamente tudo o que há no seu guarda-roupa, este tênis adidas vai se manter em constante rotação. O cabedal macio é forrado para garantir a maciez, enquanto o amortecimento Cloudfoam oferece todo o suporte de que você precisa nos dias que fazem você correr aqui, ali e em todos os lugares.
+
+Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reutilizado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -443,6 +458,10 @@ export const adidasShoes = [
     genero: '***UNISSEX, TAMANHO JUSTO***',
     text: 'Para pés largos recomendamos comprar o tamanho maior.',
     categoria: 'Running',
+    titleDescrition: 'AMORTECIMENTO E CONFORTO GARANTIDOS, FEITO PARCIALMENTE COM MATERIAIS RECICLADOS',
+    descrition: `Quanto maior a corrida, mais tempo você respira ar puro. Acrescente distância à sua rotina de corrida com o conforto amortecido deste tênis de corrida adidas. A entressola Bounce de ponta a ponta fornece aterrissagens suaves a cada passo. O cabedal leve em malha elástica envolve os pés com conforto e ventilação, além de contenção e suporte onde você mais precisa.
+
+Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reutilizado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -505,6 +524,10 @@ export const adidasShoes = [
     genero: 'Homem',
     text: '',
     categoria: 'Sportswear',
+    titleDescrition: 'FEITO PARCIALMENTE COM MATERIAIS RECICLADOS PARA NOVAS AVENTURAS',
+    descrition: ` Tem muita coisa para ver lá fora. Encare o mundo, passo a passo, com este tênis adidas X_PLRBOOST. Ele é inspirado na exploração da cidade e feito com a tecnologia da corrida. A entressola BOOST fornece energia infinita para dar suporte a aventuras o dia todo e o cabedal têxtil resistente CORDURA® resiste a arranhões e raspões ao longo do caminho. Seja na sua cidade ou pelo mundo, você vai se destacar com estilo.
+
+Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reutilizado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -629,6 +652,8 @@ export const adidasShoes = [
     genero: 'Homem',
     text: '',
     categoria: 'Sportswear',
+    titleDescrition: 'CONFORTO E ESTILO PARA USO NO DIA A DIA',
+    descrition: 'A vida não para. Agora você também não precisa fazer isso com este tênis adidas ultramoderno na sua coleção. O cabedal de malha macia é forrado para proporcionar conforto e o amortecimento Bounce leve mantém você em movimento. Esportivo, mas refinado, este tênis transcende os códigos de vestimenta.',
     cores: [
       {
         corId: 0,
@@ -721,6 +746,10 @@ export const adidasShoes = [
     genero: '***UNISSEX, FORMATO GRANDE***',
     text: 'Para pés mais finos, recomendamos que compre um tamanho menor do que o de costume.',
     categoria: 'Futebol',
+    titleDescrition: 'CANO BAIXO, FEITA PARCIALMENTE COM MATERIAIS RECICLADOS',
+    descrition: `No ataque. Na defesa. Todos os cantos. A adidas Predator Accuracy foi desenvolvida para gols. Será divertido escolher como chegar lá. Esta chuteira tem ponta do pé têxtil revestida e coberta com textura de alta definição para maior aderência com a bola. Por baixo, o solado de borracha sulcado garante o seu domínio em quadras de grama artificial de society.
+
+Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reutilizado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -823,6 +852,10 @@ export const adidasShoes = [
     genero: '***UNISSEX, FORMATO GRANDE***',
     text: 'Para pés mais finos, recomendamos que compre um tamanho menor do que o de costume.',
     categoria: 'Futebol',
+    titleDescrition: '',
+    descrition: `O X Speedportal.1 Sg é novo para essas características de filtro em nosso website, na categoria Unissex. Mas você já pode visualizar as imagens acima e ter mais detalhes, para conhecer o produto de diferentes ângulos em primeira mão. Se você já experimentou o X Speedportal.1 Sg antes, deixe um comentário a seguir para nos contar o que você achou.
+
+Ainda estamos trabalhando para obter mais informações sobre o X Speedportal.1 Sg aqui, então não esqueça de retornar ao site em breve. Enquanto isso, aqui está o número do artigo do produto GW8442 para sua referência. Ele é classificado na categoria Chuteiras`,
     cores: [
       {
         corId: 0,
@@ -877,6 +910,8 @@ export const adidasShoes = [
     genero: 'UNISSEX',
     text: '',
     categoria: 'Originals',
+    titleDescrition: 'CONFORTO CASUAL PARA SEUS MOMENTOS DE LAZER',
+    descrition: `Clima de férias o ano inteiro. É assim com este chinelo Adilette Lite, que traz liberdade para seus pés. (Pode usar com meias que aqui ninguém vai te julgar.) Este par de chinelos tem base supermacia que proporciona sensação de conforto instantânea. O logo adidas Trefoil na parte superior garante o look esportivo mesmo nos momentos de descanso.`,
     cores: [
       {
         corId: 0,
@@ -961,6 +996,8 @@ export const adidasShoes = [
     genero: 'Homem',
     text: '',
     categoria: 'Originals',
+    titleDescrition: 'CONFORTO CASUAL PARA SEUS MOMENTOS DE LAZER',
+    descrition: 'Clima de férias o ano inteiro. É assim com este chinelo Adilette Lite, que traz liberdade para seus pés. (Pode usar com meias que aqui ninguém vai te julgar.) Este par de chinelos tem base supermacia que proporciona sensação de conforto instantânea. O logo adidas Trefoil na parte superior garante o look esportivo mesmo nos momentos de descanso.',
     cores: [
       {
         corId: 0,
@@ -1006,6 +1043,10 @@ export const adidasShoes = [
     genero: 'Homem',
     text: '',
     categoria: 'Originals',
+    titleDescrition: 'FÁCIL DE USAR E FEITO EM PARCERIA COM A NATUREZA',
+    descrition: ` Coloque-o nos pés e olhe para o futuro. Inspirado na topografia tridimensional e na corrida para Marte, este chinelo adidas com foco no futuro interpreta o amanhã para o presente. Ele é feito de materiais naturais, como a cana-de-açúcar, e possui design de peça única que garante o conforto o dia todo. Ele pode ser usado em casa, no dia a dia ou para dar uma volta no quarteirão. A vibe descontraída continua pronta para tudo.
+
+Ele é feito com materiais naturais e renováveis como parte de nossa jornada para desenvolver recursos não renováveis e ajudar a acabar com o lixo plástico.`,
     cores: [
       {
         corId: 0,
@@ -1072,6 +1113,10 @@ export const adidasShoes = [
     genero: '***UNISSEX, FORMATO GRANDE***',
     text: 'Para pés mais finos, recomendamos que compre um tamanho menor do que o de costume.',
     categoria: 'Originals',
+    titleDescrition: 'OUSADO E DIVERTIDO, FEITO PARCIALMENTE COM PARLEY OCEAN PLASTIC',
+    descrition: `Elegante e sofisticado não precisa significar sem graça. Este tênis adidas NMD_R1 é a combinação perfeita de elegância e diversão. O cabedal em malha elástica macia é acentuado com estampas animais 3D para mostrar o seu lado selvagem e um detalhe translúcido do Trefoil nos cadarços adiciona profundidade extra. Quando se trata de conforto, a entressola BOOST oferece luxo de sobra o dia todo. Ao mesmo tempo, o patch moldado no calcanhar oferece mais estabilidade para encarar o dia.
+
+O cabedal deste tênis é feito com fios de alta performance contendo pelo menos 50% Parley Ocean Plastic, resíduo plástico reimaginado interceptado em ilhas remotas, praias, comunidades costeiras e litorais, evitando poluir os oceanos. Os outros 50% dos fios são de poliéster reciclado.`,
     cores: [
       {
         corId: 0,
@@ -1167,6 +1212,8 @@ export const adidasShoes = [
     genero: 'Mulher',
     text: '',
     categoria: 'Running',
+    titleDescrition: 'ESPORTIVO E CASUAL COMO SEU ESTILO DE VIDA',
+    descrition: 'Prepare-se para correr no parque com este tênis adidas, seguido de um café com os amigos. Com cabedal em mesh para maior respirabilidade, ele proporciona conforto o dia todo. O solado de borracha durável oferece uma base sólida, não importa quão cheia esteja a sua agenda.',
     cores: [
       {
         corId: 0,
@@ -1229,6 +1276,10 @@ export const adidasShoes = [
     genero: 'Mulher',
     text: '',
     categoria: 'Running',
+    titleDescrition: 'AMORTECIMENTO E CONFORTO GARANTIDOS, FEITO PARCIALMENTE COM MATERIAIS RECICLADOS',
+    descrition: `Prepare-se para uma corrida no parque ou uma caminhada até a cafeteria com este versátil tênis de corrida adidas. A entressola Cloudfoam proporciona amortecimento e conforto desde o primeiro passo. O cabedal em tecido é confortável e respirável e o solado de borracha oferece aderência suficiente para uma caminhada confiante.
+
+Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reutilizado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -1292,6 +1343,10 @@ export const adidasShoes = [
     genero: 'Mulher',
     text: '',
     categoria: 'Originals',
+    titleDescrition: 'ESTILOSO E FEITO PARCIALMENTE COM MATERIAIS RECICLADOS',
+    descrition: `Ícones de verdade nunca morrem. É o caso deste tênis adidas Superstar. Mesmo depois de 50 anos de tradição e admiração tanto no mundo da moda quanto nos esportes, este tênis nunca deixou de ser estiloso. Este modelo exibe uma estampa de borboletas nas Três Listras clássicas e no calcanhar, bem como um lindo pingente do Trefoil para ajudar a combinar com as suas peças favoritas. Você arrasaria com este tênis combinado com um vestido, por exemplo. Jovem e sempre cheio de energia, este modelo é garantia de estilo sem comprometer o conforto.
+
+Feito com uma série de materiais reciclados, o cabedal contém pelo menos 50% de conteúdo reaproveitado. Este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -1386,6 +1441,8 @@ export const adidasShoes = [
     genero: 'Mulher',
     text: '',
     categoria: 'Originals',
+    titleDescrition: 'SUPERSTAR ORIGINALS',
+    descrition: 'Feito para o basquete, adotado pelo hip hop e pelo skate, o Superstar clássico de couro mudou o jogo no momento em que ele saiu das quadras. As Três Listras serrilhadas, a icônica biqueira shell toe e o logo tornam esse design um verdadeiro Originals.',
     cores: [
       {
         corId: 0,
@@ -1475,6 +1532,8 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Originals',
+    titleDescrition: '',
+    descrition: `Inspiradas no modelo original lançado em 1985, as Air Jordan 1 Low garantem um look elegante e clássico que é familiar, mas simultaneamente moderno. Com um design icónico que combina na perfeição com qualquer look, estas sapatilhas permitem que estejas sempre no teu melhor`,
     cores: [
       {
         corId: 0,
@@ -1501,6 +1560,8 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Originals',
+    titleDescrition: '',
+    descrition: `Sempre na moda, sempre modernas. As Air Jordan 1 Low equipam-te com um pedaço da história e da herança Jordan, proporcionando conforto durante todo o dia. Escolhe as cores e, em seguida, destaca-te com o perfil emblemático fabricado com uma combinação de materiais de alta qualidade e uma unidade Air encapsulada no calcanhar.`,
     cores: [
       {
         corId: 0,
@@ -1557,6 +1618,22 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Originals',
+    titleDescrition: 'Tênis Nike Air Winflo 9 - Masculino',
+    descrition: `CAIMENTO LEVE E CONFORTÁVEL PARA UMA CORRIDA ENÉRGICA.
+Rápido o suficiente para suas corridas diárias, leve o suficiente para manter você no ritmo.
+O Nike Air Winflo 9 tem um ajuste seguro que mantém seu pé no lugar durante seus quilômetros.
+
+Adicionamos muita espuma na entressola, dando energia extra a cada passo.
+
+Amarre os cadarços, contenha seus pés e atinja suas metas.
+Sustentação ventilada e leveA parte de cima usa tela translúcida para um conforto ventilado.
+
+Uma alça ajustável interna de médio pé trabalha em conjunto com os cadarços para proporcionar mais sustentação ao amarrá-los.
+Passos enérgicosA espuma Cushlon foi atualizada a partir do modelo 8, proporcionando uma sensação mais elástica que dá impulso a cada passada.
+
+Utilizamos uma unidade Nike Dot Weld Air em comprimento total para maior sustentação aos impactos e capacidade de resposta do calcanhar à ponta.
+Pés no chãoSola de borracha com padrão inspirado no Waffle para uma tração ideal para a estrada.
+Mais benefíciosAmortecimento na boca para uma sensação de firmeza e segurança.`,
     cores: [
       {
         corId: 0,
@@ -1583,6 +1660,8 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Originals',
+    titleDescrition: '',
+    descrition: `A camurça premium e a espuma Formula 23 exclusiva da Marca Jordan se unem para dar a você um AJ1 extra luxuoso (e extra aconchegante). Você não precisa brincar de “um ou outro” quando se trata de escolher estilo ou conforto com este tênis - o que é bom, porque você merece os dois.`,
     cores: [
       {
         corId: 0,
@@ -1627,6 +1706,10 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Basquete',
+    titleDescrition: '',
+    descrition: `Se conecte com o The King, inspire-se no astro da liga de basquete mais famosa do mundo para brilhar dentro de quadra com o Tênis Nike NBA Lebron James! Com design moderno, o sneaker tem um cabedal confeccionado em malha resistente junto a um calcanhar moldado em TPU para suporte e estabilidade e bordado do leão com uma coroa para dar um up no look despojado esportivo. A entressola desse tênis de basquete conta com a famosa tecnologia Nike Air, que proporciona amortecimento durável com leveza, sendo ideal para você correr pela quadra com conforto e liberdade. O solado emborrachado oferece segurança contra escorregões dentro das quatro linhas, com frisos que auxiliam na movimentação multidirecional e flexibilidade. Estiloso, esse Tênis Nike também é opção fora das quadras, combinando com jeans ou bermudas masculinas. Garanta já o seu e converta esse arremesso com o modelo Tênis NBA Nike Lebron Witness VII Masculino!
+
+`,
     cores: [
       {
         corId: 0,
@@ -1703,6 +1786,26 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Sportswear',
+    titleDescrition: 'O FUTURO DA FORMA DA SOLA EM COURO.',
+    descrition: `
+A maior e mais recente inovação das ruas, o Nike SB Force 58 Premium oferece a durabilidade da forma da sola com a flexibilidade de um tênis vulcanizado. Feito com couro macio, flexível e acabamento com perfurações, o look todo é infundido com o DNA do basquete tradicional.
+
+
+Basquete DNA
+
+O couro premium é macio e flexível. As perfurações e o Swoosh na ponta são uma homenagem aos estilos de herança do basquete.
+
+
+Nova forma da sola
+
+O novo design garante a durabilidade da forma da sola com a flexibilidade que você precisa para reduzir o tempo de amaciamento e maximizar os dias de skate. As formas Tri-STAR na sola se expandem e contraem para melhor aderência e contato com o shape logo no primeiro uso.
+
+
+Ajuste seguro
+
+Uma entretela elástica interna envolve o pé para que o tênis não solte se os cadarços desamarrarem.
+
+`,
     cores: [
       {
         corId: 0,
@@ -1747,6 +1850,15 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Sportswear',
+    titleDescrition: 'RECONSTRUÍDO COM GT.',
+    descrition: `Reconstruído com base nas informações de Grant Taylor, o Nike SB Zoom Blazer Low Pro GT é uma nova versão de um tênis de skateboard favorito. O design atualizado conta com uma faixa de suporte mais elevada para oferecer mais durabilidade.
+
+
+Benefícios
+
+O suede cria um look clássico e durável.
+A construção vulcanizada funde a sola à parte de cima para uma sensação confortável e flexível.
+A faixa de suporte alta entre a entressola e a parte de cima aumenta a durabilidade.`,
     cores: [
       {
         corId: 0,
@@ -1809,6 +1921,21 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Originals',
+    titleDescrition: '',
+    descrition: `Você tem cinco segundos? Então você tem tempo para calçar esses Jordans no seu filho. O sistema de faixa aderente facilita abrir o tênis e vesti-lo nos pezinhos. E o visual é 100% clássico do Jordan. Eles vão ficar elegantes (como se ninguém soubesse!) e permanecer seco. Só benefícios.
+
+
+Benefícios
+
+Sistema de faixa aderente facilita na hora de calçar e tirar.
+Alça ajuda você a colocar o calçado nos pezinhos.
+Solado de borracha proporciona ampla tração aos seus pequenos.
+
+Detalhes do Produto
+
+Logotipo de asas estampado no calcanhar.
+Logotipo Swoosh costurado
+Design Jumpman na língua`,
     cores: [
       {
         corId: 0,
@@ -1871,6 +1998,23 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Originals',
+    titleDescrition: 'PERFIL BAIXO QUE TE ACOMPANHA.',
+    descrition: `Sempre na moda, sempre fresco. O Air Jordan 1 Low traz consigo o melhor da história e da herança do Jordan, oferecendo conforto o dia todo. Escolha suas cores e aposte neste perfil icônico que foi desenvolvido com uma mistura de materiais de alta qualidade e Air encapsulado no calcanhar.
+
+
+Materiais de alta qualidade
+
+Nesta edição, o Low apresenta uma combinação de couro e materiais sintéticos na parte de cima.
+
+
+Conte com o Air
+
+Unidade Air encapsulada no calcanhar, garantindo o amortecimento leve que é uma sensação há gerações.
+
+
+Detalhes atemporais
+
+O logotipo Wings no calcanhar, um design Jumpman na língua e uma presilha de cadarço "23" adornam o tênis com detalhes icônicos.`,
     cores: [
       {
         corId: 0,
@@ -1931,6 +2075,8 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Originals',
+    titleDescrition: '',
+    descrition: `Pós-jogo, tarefas e muito mais - ajuste o seu conforto facilmente. A tira ajustável e acolchoada permite que você aperfeiçoe seu ajuste, enquanto a entressola de espuma leve traz conforto de primeira classe aos seus pés.BenefíciosA palmilha contornada envolve o seu pé para ajudar a mantê-lo no lugar.Espuma de dupla densidade fornece amortecimento leve.A faixa aderente é forrada com tecido macio para conforto extra.A etiqueta do logo também funciona como uma aba de puxar para ajudar a abrir a alça.O solado apresenta um padrão circular para conferir durabilidade e tração.`,
     cores: [
       {
         corId: 0,
@@ -1985,6 +2131,15 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Originals',
+    titleDescrition: '',
+    descrition: `Quando se trata dessas sandálias, está tudo no nome. Respire fundo e vista um visual minimalista com amortecimento maximalista. A espuma contornada é perfeitamente criada a partir de uma peça e envolve seus pés para ajudar a mantê-los no lugar. Para completar, o design resistente à água seca rapidamente, tornando-o ideal para relaxar à beira da piscina. Você obtém todo o estilo, nenhum esforço. É hora de um pouco de Calma.
+
+
+Benefícios
+
+A espuma macia e responsiva oferece um conforto incrível e seca rapidamente, não importa onde o seu dia te leve.
+O padrão de textura sutil na palmilha adiciona aderência para que seus pés permaneçam no lugar.
+Solado de borracha em todo o c`,
     cores: [
       {
         corId: 0,
@@ -2038,6 +2193,18 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Futebol',
+    titleDescrition: '',
+    descrition: `Quer esteja começando ou apenas jogando por diversão, os calçados Club colocam você em campo sem comprometer a qualidade. Com material sintético e sistema de amarração assimétrico, elas fornecem toque preciso para ajudar você a enterrar gols no fundo da rede ou preparar um companheiro de equipe com um passe certeiro que muda o jogo a seu favor.
+
+
+Contato do Calçado à Bola
+
+Material sintético na parte de cima deixa o seu pé ainda mais próximo da bola para toque preciso ao driblar e fazer passes.
+
+
+Contorno para Conforto
+
+Colarinho de mesh para suporte proporciona conforto e respirabilidade. Amarração assimétrica trabalha com a zona de toque na parte interna do calçado para proporcionar uma área mais limpa para driblar, fazer passes e marcar.`,
     cores: [
       {
         corId: 0,
@@ -2098,6 +2265,16 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Futebol',
+    titleDescrition: 'TOQUE CLÁSSICO PARA O GRAMADO.',
+    descrition: `
+Feita com linhas clean e um visual clássico, a Nike Beco 2 TF permite que a sua jogada fale por si só. Um solado de borracha especializado proporciona tração em superfícies artificiais, enquanto a biqueira acolchoada cria toque confiável.
+
+
+Benefícios
+
+Couro sintético proporciona suporte e é durável.
+Costura na região dos dedos proporciona textura para toque e ajuda a manter o ajuste.
+Perfurações no mediopé criam respirabilidade.`,
     cores: [
       {
         corId: 0,
@@ -2179,6 +2356,29 @@ export const nikeShoes = [
     tipo: 'calçados',
     text: '',
     categoria: 'Futebol',
+    titleDescrition: '',
+    descrition: `Querendo levar seu jogo para o próximo nível? Os calçados Academy dão a você o toque de precisão que você precisa para deixar seus instintos de jogo mais íntimos deslumbrarem. Apresentando NikeSkin e uma zona de toque de mesh para maior controle de bola e uma placa de agilidade projetada para desviar e correr com você, está pronta para inflamar seu espírito espontâneo de jogo.
+
+
+Contato do Calçado à Bola
+
+Uma zona de toque NikeSkin expandida, alimentada por mesh trabalhado, aproxima ainda mais o pé da bola para melhor controle ao driblar e passar em condições molhadas ou secas. O cabedal é macio e quase tricotado, enquanto a zona de contato na parte interna do calçado é aumentada para um toque ainda melhor.
+
+
+Contorno para Conforto
+
+A assimetria no calcanhar proporciona conforto. Elementos macios no calcanhar facilitam o processo de laceamento e ajudam a reduzir a irritação e pressão, sem comprometer a estabilidade e a estrutura.
+
+
+Tração na Grama
+
+Um solado de textura generativa oferece tração em superfícies de grama.
+
+
+Detalhes do Produto
+
+Para uso em superfícies curtas e sintéticas.
+Palmilha acolchoada`,
     cores: [
       {
         corId: 0,
@@ -2258,6 +2458,17 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Moletom',
+    titleDescrition: '',
+    descrition: `Levante-se e transforme seu guarda-roupa de lã com fortes vibrações aconchegantes. O ajuste espaçoso desse moletom Phoenix Fleece mantém você relaxado e confortável, enquanto os detalhes exagerados (como nervuras extra-altas e um bolso frontal grande) adicionam um visual arrojado, ajudando você a se destacar.
+
+
+Benefícios
+
+Ombros colocados mais para baixo e mangas espaçosas proporcionam sensação relaxada e oversized.
+Macio por fora e aconchegante por dentro, o fleece escovado é nosso material favorito de moletons para temperaturas mais frias.
+As nervuras alongadas nos punhos e na bainha proporcionam conforto e estrutura extra.
+Capuz de 4 painéis proporcionam um visual clean e premium.
+`,
     cores: [
       {
         corId: 0,
@@ -2300,6 +2511,16 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Moletom',
+    titleDescrition: '',
+    descrition: `Reivindique o básico como seu no Phoenix Fleece, disponível em uma variedade de ajustes e finalizado com detalhes premium, mas discretos. Pronta para o final de semana, essa calça cós alto, oversized, é feita com as suas croppeds e moletons favoritos em mente. Fleece escovado extra confortável a torna uma escolha fácil em dias mais frios.
+
+
+Benefícios
+
+Macio por fora e aconchegante por dentro, o fleece escovado é nosso material favorito de moletons para temperaturas mais frias.
+Solta no quadril e coxas, a perna tem acabamento com punho elástico no tornozelo para um visual perfeitamente ajustado.
+Nervuras alongadas no cós proporcionam conforto e estrutura extra.
+`,
     cores: [
       {
         corId: 0,
@@ -2357,6 +2578,18 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camisetas',
+    titleDescrition: '',
+    descrition: `Com tecido de algodão macio, esta polo nunca vai tocar você da maneira errada. Seu ajuste slim e ajustado ao corpo mantém seu visual limpo e nítido, não importa como você o estilize.
+
+
+Detalhes do Produto
+
+97% algodão/3% spandex
+Carcela com Decote V
+Logo Swoosh bordado
+Lavável à máquina
+Importado
+`,
     cores: [
       {
         corId: 0,
@@ -2404,6 +2637,18 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camisetas',
+    titleDescrition: '',
+    descrition: `Atualizamos as nossas Camisetas Club Essentials para dar a elas um ajuste fácil e o visual moderno perfeito para uso no dia a dia. Um pouco mais larga e curta no corpo, com uma bainha levemente curvada fazem dessa camiseta uma peça sempre confortável com um visual atualizado.
+
+
+Detalhes do Produto
+
+50-100% algodão e 0-50% poliéster
+Os percentuais de material podem variar. Confira o conteúdo real na etiqueta.
+Logotipo bordado
+Lavável à máquina
+Importado
+`,
     cores: [
       {
         corId: 0,
@@ -2454,6 +2699,17 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Jaqueta',
+    titleDescrition: 'SUPERE OS ELEMENTOS.',
+    descrition: `
+A jaqueta Nike Therma Repel Park é uma camada leve desenvolvida para enfrentar climas chuvosos e com vento. O acabamento impermeável ajuda a manter seu corpo seco durante a competição ou treino. Este produto é feito com, no mínimo, 75% de fibras de poliéster reciclado.
+
+
+Benefícios
+
+O tecido impermeável ajuda a manter seu corpo seco quando o tempo muda.
+O zíper alongado vai acima do queixo para uma maior cobertura.
+Os punhos e a bainha elásticos ajudam a manter a jaqueta no lugar enquanto você se movimenta.
+Os bolsos com fecho de pressão armazenam itens essenciais com segurança.`,
     cores: [
       {
         corId: 0,
@@ -2490,6 +2746,17 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: 'PURO CONFORTO',
+    descrition: `A camisa polo masculina Nike Sportswear conta com tecido de puro algodão em um perfil clássico para conforto duradouro e um look polido.
+
+
+Benefícios
+
+Tecido em puro algodão macio e confortável
+Bainha ventilada possibilita uma ampla gama de movimentos naturais
+Gola e punhos reforçados para maior durabilidade
+Gola dobrada com carcela de botão
+`,
     cores: [
       {
         corId: 0,
@@ -2530,6 +2797,24 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: 'ESTILO CLÁSSICO. LOOK MODERNO.',
+    descrition: `
+A camisa polo Nike Sportswear eleva o estilo atemporal com detalhes refinados. Desenvolvida com algodão ultramacio, ela possui uma gola dobrável com carcela abotoamento duplo para um look clássico e com uma pitada de modernidade.
+
+
+Conforto e maciez
+
+O tecido em algodão é macio e confortável.
+
+
+Design clássico
+
+A gola dobrável e a carcela com dois botões oferecem um look clássico.
+
+
+Ajuste seguro
+
+Punhos canelad`,
     cores: [
       {
         corId: 0,
@@ -2587,6 +2872,15 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camisetas',
+    titleDescrition: 'PERMANEÇA SECO EM UM DESIGN CLÁSSICO.',
+    descrition: `A Polo Nike Dri-FIT Park é um clássico do dia a dia, feito com tecido macio, que absorve o suor para ajudar a manter você confortável das arquibancadas para as ruas. Esse produto é feito com tecido com 100% de poliéster reciclado.
+
+
+Benefícios
+
+A tecnologia Dri-FIT ajuda a manter você seco e confortável.
+Viés nos ombros inspiram um visual clássico do futebol.
+Tecido super leve possui toque macio.`,
     cores: [
       {
         corId: 0,
@@ -2621,6 +2915,23 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Short',
+    titleDescrition: '',
+    descrition: `Feito para treinos, o nosso Shorts Totality absorve o suor e permite que você mantenha a simplicidade e o frescor. Ele tem um ajuste relaxado com tecido macio que oferece conforto, quer você esteja fazendo repetições na academia ou seguindo a sua rotina de treinos favorita em casa.
+
+
+Adeus, Suor!
+
+Tecnologia Nike Dri-FIT absorve o suor da sua pele para evaporação mais rápida, ajudando a manter você seca e confortável.
+
+
+Movimente-se com confiança
+
+O tecido de knit é macio e suave, e as aberturas na bainha ajudam você a se movimentar livremente em várias direções.
+
+
+Armazenamento Seguro
+
+Os bolsos para as mãos oferecem armazenamento fácil para ajudar a manter os itens essenciais, como seus cartões e chaves, por perto.`,
     cores: [
       {
         corId: 0,
@@ -2661,6 +2972,8 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Não há dúvidas sobre onde está a lealdade ao seu time quando você está vestindo esta camiseta clássica do Paris Saint-Germain. O brasão que você conhece e ama destaca-se na frente de um design de algodão macio como um símbolo de seu inegável apoio ao seu time.`,
     cores: [
       {
         corId: 0,
@@ -2684,6 +2997,8 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Cada jornada rumo à grandeza começa com o domínio dos fundamentos. Mas não se engane: essa camiseta é tudo, menos básica. A tecnologia que absorve o suor ajuda a manter os jogadores frescos durante o pré-jogo ou rotina de treino. Escolha entre 9 cores diferentes para equipar seu time.Benefícios-Tecnologia Nike Dri-FIT absorve o suor da pele dos atletas para evaporação mais rápida, ajudando a mantê-los secos e confortáveis.-O mesh nas costas e laterais proporciona respirabilidade para ajudar a manter o frescor.Detalhes do Produto-Design do Swoosh bordado-100% poliéster-Lavável à máquina-Importado`,
     cores: [
       {
         corId: 0,
@@ -2708,6 +3023,14 @@ export const nikeRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Nossos designers procuraram nos arquivos para criar a camisa do Liverpool FC 2023/24 Away, inspirando-se em um color block lançado pela primeira vez em 1995. Os gráficos verdes digitalizados adicionam um visual moderno, enquanto um gráfico interno presta homenagem às 97 pessoas que morreram tragicamente no desastre de Hillsborough. A nossa coleção Stadium combina detalhes da camisa de réplica com tecnologia antissuor para oferecer um look pronto para o jogo e inspirado no seu time favorito.
+
+
+Benefícios
+
+O tecido ventilado com tecnologia Nike Dri-FIT absorve o suor da sua pele e proporciona uma evaporação mais rápida para manter seu corpo seco e confortável.
+O design de réplica apresenta detalhes baseados no que os craques usam.`,
     cores: [
       {
         corId: 0,
@@ -2737,6 +3060,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `O Run It Tee M é novo para essas características de filtro em nosso website, na categoria Homem. Mas você já pode visualizar as imagens acima e ter mais detalhes, para conhecer o produto de diferentes ângulos em primeira mão. Se você já experimentou o Run It Tee M antes, deixe um comentário a seguir para nos contar o que você achou.
+
+Ainda estamos trabalhando para obter mais informações sobre o Run It Tee M aqui, então não esqueça de retornar ao site em breve. Enquanto isso, aqui está o número do artigo do produto GB6892 para sua referência. Ele é classificado na categoria Camisetas`,
     cores: [
       {
         corId: 0,
@@ -2762,6 +3089,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Short',
+    titleDescrition: '',
+    descrition: `O M 3S Short é novo para essas características de filtro em nosso website, na categoria Homem. Mas você já pode visualizar as imagens acima e ter mais detalhes, para conhecer o produto de diferentes ângulos em primeira mão. Se você já experimentou o M 3S Short antes, deixe um comentário a seguir para nos contar o que você achou.
+
+Ainda estamos trabalhando para obter mais informações sobre o M 3S Short aqui, então não esqueça de retornar ao site em breve. Enquanto isso, aqui está o número do artigo do produto EY0324 para sua referência. Ele é classificado na categoria Shorts e Bermudas`,
     cores: [
       {
         corId: 0,
@@ -2800,6 +3131,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Jaqueta',
+    titleDescrition: 'RESISTENTE AO VENTO E FEITA COM MATERIAIS RECICLADOS',
+    descrition: `Seja para correr com a sua comunidade ou sozinho, não há nada como a alegria de estar no topo de uma corrida. Uma coisa é certa: conforto e suporte são fundamentais para maximizar sua corrida diária.
+
+A jaqueta Own the Run combina um design favorito com fecho de zíper e tecnologia adidas WIND.RDY que resiste ao vento e repele a chuva quando você está em condições de frio. Detalhes refletivos, capuz ajustável e bolsos com zíper mantêm você visível e protegido, além de armazenar itens pequenos. As mangas pré-moldadas proporcionam o melhor ajuste enquanto você percorre quilômetros e a barra posterior alongada aumenta a cobertura e a autoconfiança. Feito 100% de materiais reciclados, este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -2828,6 +3163,8 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: 'FEITA PARCIALMENTE COM MATERIAIS RECICLADOS',
+    descrition: `Esta camiseta de treino adidas permite total liberdade de movimentos para qualquer tipo de exercício. A modelagem permite que os braços se movam livremente acima da cabeça. O tecido respirável e a tecnologia Aeroready antissuor garantem que sua pele fique seca e você confortável.`,
     cores: [
       {
         corId: 0,
@@ -2891,6 +3228,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: 'FEITA COM MATERIAIS RECICLADOS PARA OS FÃS DO REAL MADRID',
+    descrition: `Para a maioria dos times de futebol, vencer é tudo. Para este, faz parte de um projeto mais grandioso. Assim como o clube que ele representa, esta camisa de torcedor juvenil adidas do Real Madrid representa elegância e estilo. Decorada com a clássica cor branca e detalhes dourados, ela exibe a inscrição " ¡Hala Madrid!" na parte de trás da gola. O tecido AEROREADY que remove o suor garante que você se sinta tão segura quanto o seu look enquanto torce pelo seu time favorito.
+
+Feito 100% de materiais reciclados, este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -2929,6 +3270,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: 'CONFORTO EXTRA NO ESTILO DAS TRÊS LISTRAS, FEITA EM PARCERIA COM A NATUREZA',
+    descrition: `Todo guarda-roupa precisa de uma camiseta com as Três Listras. Ou várias. Uma para cada dia da semana seria ideal. As crianças podem vestir esta camiseta adidas nos dias de aula, para andar de bicicleta no parque ou assistir a um filminho à noite. A maciez do algodão orgânico garante o conforto em qualquer ocasião.
+
+Esta camiseta é feita com materiais naturais e renováveis como parte de nossa jornada para extinguir o uso de recursos não renováveis e ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -2954,6 +3299,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `O Short Tee Set é novo para essas características de filtro em nosso website, na categoria Kids. Mas você já pode visualizar as imagens acima e ter mais detalhes, para conhecer o produto de diferentes ângulos em primeira mão. Se você já experimentou o Short Tee Set antes, deixe um comentário a seguir para nos contar o que você achou.
+
+Ainda estamos trabalhando para obter mais informações sobre o Short Tee Set aqui, então não esqueça de retornar ao site em breve. Enquanto isso, aqui está o número do artigo do produto IB9993 para sua referência. Ele é classificado na categoria Conjuntos infantis`,
     cores: [
       {
         corId: 0,
@@ -2982,6 +3331,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Short',
+    titleDescrition: 'COM TECNOLOGIA PARA REMOÇÃO DE UMIDADE, FEITO PARCIALMENTE COM MATERIAIS RECICLADOS',
+    descrition: `Seja qual for a surpresa do dia, você sempre estará pronto com este shorts juvenil de futebol adidas Entrada 22. Ele é versátil e clássico, com tecido AEROREADY que mantém a pele seca e refrescada. A cintura elástica ajustável por cordão proporciona um caimento aconchegante.
+
+Feito 100% de materiais reciclados, este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -3020,6 +3373,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: 'ESTILO AUTÊNTICO PARA O DIA A DIA',
+    descrition: `A marca com as Três Listras esforça-se para evoluir sempre. Ser a melhor. Criada para ser verdadeiramente original, a coleção Adicolor tem seu legado como essência. O icônico logo Trefoil celebra essa energia na frente e no centro desta camiseta clássica adidas. A malha simples oferece um toque macio na pele.
+
+Nossas peças em algodão apoiam a plantação sustentável dessa matéria-prima. Essa atitude faz parte da nossa ambição de eliminar o lixo plástico.`,
     cores: [
       {
         corId: 0,
@@ -3060,6 +3417,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: 'FRESCOR E RESPIRABILIDADE DURANTE A CORRIDA',
+    descrition: `Esta camiseta de corrida adidas é ideal para qualquer tipo de corrida, seja curta ou longa. O tecido respirável é feito com AEROREADY, que remove o suor e mantém o corpo seco. O corte esportivo exibe o estilo simples das Três Listras e detalhes refletivos que brilham em condições de baixa luminosidade.
+
+Feito 100% de materiais reciclados, este produto representa apenas uma das nossas soluções para ajudar a acabar com os resíduos plásticos.`,
     cores: [
       {
         corId: 0,
@@ -3129,6 +3490,8 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Jaqueta',
+    titleDescrition: 'FEITO COM MATERIAIS RECICLADOS',
+    descrition: `Esta versão moderna do agasalho clássico mantém você confortável e com um look elegante. O visual é inovador e minimalista, com uma blusa justa, calça de pernas largas e blocos de cores em dois tons. As Três Listras características forram as mangas e as pernas das calças, mostrando seu estilo esportivo.`,
     cores: [
       {
         corId: 0,
@@ -3173,6 +3536,10 @@ export const adidasRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `O W 3S T é novo para essas características de filtro em nosso website, na categoria Mulher. Mas você já pode visualizar as imagens acima e ter mais detalhes, para conhecer o produto de diferentes ângulos em primeira mão. Se você já experimentou o W 3S T antes, deixe um comentário a seguir para nos contar o que você achou.
+
+Ainda estamos trabalhando para obter mais informações sobre o W 3S T aqui, então não esqueça de retornar ao site em breve. Enquanto isso, aqui está o número do artigo do produto GB4351 para sua referência. Ele é classificado na categoria Camisetas`,
     cores: [
       {
         corId: 0,
@@ -3211,6 +3578,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Nascido em Anaheim, Califórnia, em 1966, o Authentic é o estilo tradicional original da Vans. Originalmente conhecido como Vans #44 Deck Shoes, o Authentic se tornou um ícone cult imediato e incorpora nossa atitude “Off The Wall” desde então. Construído com um perfil simples com cadarço, o Tênis Authentic Port Royale Black é um clássico que mantém viva a vibe old school. Com cabedal em lona resistente na cor vinho, apresenta vira lateral de borracha na cor branca, ilhós de metal e o solado emborrachado em waffle exclusivo Vans.`,
     cores: [
       {
         corId: 0,
@@ -3262,6 +3631,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Quando os clássicos se unem ao conforto. A Vans renovou a silhueta clássica do Old Skool introduzindo a tecnologia ComfyCush: uma nova sola mais macia e acolchoada que oferece ao ComfyCush Old Skool um ajuste sem igual que faz com que pareça que estamos andando nas nuvens. Apresentando uma construção co-moldada de espuma e borracha para a combinação perfeita de conforto e aderência, com o Classic ComfyCush Old Skool é possível se sentir confortável o tempo todo, mantendo a estética atemporal do icônico calçado com sidestripe. Equipado com solas de borracha que proporcionam durabilidade e tração, interiores simplificados de peça única com maior suporte no arco e forro com material que absorve a umidade em todo o interior do tênis. Com cabedal em camurça e lona bordada recém-construído que se concentra na estabilização da lingueta, o Tênis Old Skool ComfyCush True White na cor branca confere um toque retrô aos estilos esportivos da Vans do início dos anos 90 e oferece uma experiência em que o conforto é vital.`,
     cores: [
       {
         corId: 0,
@@ -3330,6 +3701,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `O romance do surfe não se encontra apenas no ato de pegar uma onda, mas em vivenciar as comunidades que a cercam. A jornada de autodescoberta de Michael February na água é resultado direto da inspiração que ele encontra em terra. Inspirada na conexão do surf com arte, música e cultura, esta coleção atemporal destaca a beleza que você pode encontrar quando olha além do intervalo. Para esta temporada, a coleção de Mikey é caracterizada por uma variedade de calçados e roupas que combinam harmoniosamente inovação, funcionalidade e materiais sustentáveis. Combinando os recursos de conforto e versatilidade do UltraRange com as diretrizes de design VR3 da Vans, o Tênis Ultrarange Neo Vr3 Mikey February White Multi possui tecnologia na entressola em EcoCush com espuma 50% Bio-Based, borracha EcoRubber de fontes renováveis e cabedal com 100% dos materiais derivados de garrafas PET e couro de fontes regenerativas. Ele permite que você enfrente os momentos inesperados do seu dia enquanto faz uma escolha consciente da sustentabilidade ao longo de sua jornada. A equipe Vans estabeleceu metas ambiciosas de sustentabilidade. Grandes ou pequenos, todos os esforços resultam em mudanças positivas.`,
     cores: [
       {
         corId: 0,
@@ -3398,6 +3771,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Máximo conforto e aliado de todas as rotinas. Esteja sempre pronto para o inesperado com o Tênis UltraRange Exo Se Palette Pack Dazzling Blue. Com um solado co-moldado construído em padrão tratorado em waffle - exclusividade Vans - ele maximiza a cobertura, aderência e durabilidade da borracha. A nova entressola UltraCush™ Lite traz conforto e leveza para o calce. O modelo de cano baixo possui cabedal com inspiração na silhueta do icônico Old Skool - em camurça, tecido e sintético em tons de azul, verde, roxo e amarelo - totalmente respirável, com biqueira e antepé de borracha renovado, deixando o calce no ajuste ideal. O Exo Skeleton fornece apoio integrado nos dedos e na parede lateral medial, com uma trava de calcanhar para um ajuste seguro. No calcanhar e lingueta, traz puxadores, facilitando o calce. `,
     cores: [
       {
         corId: 0,
@@ -3462,6 +3837,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Em 1977, o tênis Slip-On, conhecido originalmente como Vans #98 é apresentado e com a ajuda de skatistas e atletas de BMX, virou uma febre no sul da Califórnia. Anos depois, ganhou atenção e apelo internacional quando apareceu nos pés de Jeff Spiccoli, personagem interpretado por Sean Penn no filme Fast Times at Ridgemont High, de 1982, tornando-se um dos maiores ícones da Vans. O Tênis Slip-On True White possui perfil baixo, cabedal de lona têxtil resistente na cor branca, cano acolchoado, elástico nas laterais, viras laterais de borracha na cor branca com biqueiras reforçadas para suportar o desgaste por repetição e a original sola de borracha Waffle exclusiva Vans.`,
     cores: [
       {
         corId: 0,
@@ -3525,6 +3902,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Mesclando comédia com aprendizado, a Vila Sésamo tem ajudado a formar crianças mais espertas, fortes e bondosas há cinco décadas. Com uma estratégia minuciosa e seu lado profundamente inclusivo, a Vila Sésamo se tornou o programa infantil mais assistido da história e, sem dúvida, o mais impactante. Nesta temporada, convidamos você a se juntar à Vans na vila mais amigável do mundo. A coleção completa celebra a vila onde todo monstro, pássaro, resmungão e humano se sente em casa. Evocando memórias da infância e despertando nostalgia nos adultos, a coleção Vans X Sesame Street foi pensada para toda a família.`,
     cores: [
       {
         corId: 0,
@@ -3586,6 +3965,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Nascido em Anaheim, Califórnia, em 1966, o Authentic é o estilo original que carrega a tradição da Vans. Originalmente conhecido como Vans #44 Deck Shoes, o Authentic tornou-se um ícone popular e incorporou a atitude “Off The Wall” desde então. Desenvolvido com um perfil simples de cano baixo e cadarço, o Tênis Authentic Infantil Red True White é um clássico Vans construído especialmente para os pequenos. Com cabedal resistente de lona vermelha, traz ilhós de metal e sola de borracha waffle exclusiva Vans.`,
     cores: [
       {
         corId: 0,
@@ -3650,6 +4031,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `O slip-on Vans que dita tendências desde 1979. O Classic Slip-On, com sua abordagem “Zero cadarços, zero problemas”, foi apresentado ao mundo pela primeira vez em 1979. Desde então, tornou-se ícone da cultura pop, conhecido por sua versatilidade de compor tanto um visual elegante quanto descontraído, por seu conforto confiável e flexibilidade de se adaptar ao estilo de todos. Com estampa de criaturas marinhas que brilham no escuro, o Tênis Slip-On Infantil Glow Xray Ocean Blue Multi possui uma silhueta atemporal que combina diversão com estilo, para os pequenos curtirem todos os momentos.`,
     cores: [
       {
         corId: 0,
@@ -3713,6 +4096,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Um tênis Vans pronto não só para o skate, mas para enfrentar o que vier. Diretamente da “Alameda dos Tornados”, em Oklahoma, Kyle Walker cresceu em um ambiente marcado pela imprevisibilidade e verdadeira determinação. O modelo que carrega sua assinatura é exatamente o tênis que você precisa para subir no skate e enfrentar qualquer desafio com garra. Com um visual clássico e tradicional da Vans, na cor vermelha, o Tênis Skate Kyle Walker Port True White proporciona o conforto ideal, a aderência e a durabilidade necessárias para continuar evoluindo. Ele vai expandir sua percepção sobre o que é possível, assim como o próprio Kyle.`,
     cores: [
       {
         corId: 0,
@@ -3766,6 +4151,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Em 1992, os skatistas criaram o mais genial tênis de skate do mundo utilizando apenas tesoura e fita adesiva. Eles cortaram seus sapatos para produzir um calçado que pudesse levar o skate para qualquer lugar, e foi então que o Half Cab nasceu. Completando 30 anos de Half Cab e redesenhada para o skate moderno, a coleção Vans Skate Classics oferece mais do que os skatistas precisam para permitir evolução máxima. Com cabedal clássico de camurça e lona de 170g, o Tênis Skate Half Cab 92 Pig Suede Brick possui a silhueta icônica que você deseja, trazendo todos os benefícios de desempenho que os skatistas exigem. O Skate Half Cab é referência na construção de tênis para a prática do skate. Só que agora, após três décadas, ele está melhor do que nunca.`,
     cores: [
       {
         corId: 0,
@@ -3792,6 +4179,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `O tênis tradicional da Vans que deu início a tudo. Este é o legítimo Authentic, com a silhueta clássica e original da Vans. Introduzido pela primeira vez em 1966 e impulsionado pela cultura criativa desde então, o tênis de longa data mantém a vibe Old Skool, trazendo a icônica estampa floral e em checkerboard colorido em todo o cabedal. Com silhueta clássica de cano baixo e a icônica sola de borracha waffle, o Tênis Authentic Floral Checkerboard Marshmallow homenageia a silhueta original da Vans, com um visual repaginado e atemporal. Características do produto: • Tênis de cano baixo tradicional da Vans • Fechamento com cadarço • Cabedal de lona resistente `,
     cores: [
       {
         corId: 0,
@@ -3851,6 +4240,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Descritivo:Um estilo “volumoso” típico dos anos 90 que foi inspirado no Classic Slip-On da Vans. O Knu Slip é a interpretação contemporânea de um estilo clássico dos anos 90, caracterizado por sua lingueta volumosa e colarinho contornado que trazem mais conforto e suporte. Com a combinação de perfil dramático e composição clássica para maior praticidade, o Tênis Knu Slip Black True White reproduz o original Classic Slip-On enquanto mescla um ícone do passado com as tendências do presente.`,
     cores: [
       {
         corId: 0,
@@ -3899,6 +4290,8 @@ export const vansShoes = [
     tipo: 'tenis',
     text: '',
     categoria: 'Calçados',
+    titleDescrition: '',
+    descrition: `Em 1977, o tênis Slip-On, nomeado originalmente como Vans #98 é apresentado e com a ajuda de skatistas e atletas de BMX, virou uma febre no sul da Califórnia. Anos depois, ganhou atenção e apelo internacional quando apareceu nos pés de Jeff Spiccoli, personagem interpretado por Sean Penn no filme Fast Times at Ridgemont High, de 1982, tornando-se um dos maiores ícones da Vans. O tênis Classic Slip-On possui perfil baixo, cabedal de lona têxtil resistente estampado em textura animal print de cobra, cano acolchoado, elástico nas laterais, viras laterais de borracha na cor branca com biqueiras reforçadas para suportar o desgaste por repetição e a original sola de borracha Waffle exclusiva Vans. Traz aplicação de patch bordado com assinatura em vermelho com inscrição “Hockey” nas laterais com costura pesponto contrastante no contorno do cabedal e aplicação de etiqueta tecida em checkerboard. • Tênis de cano baixo original da Vans • Cabedais resistentes em lona • Colarinhos acolchoados • Solado emborrachado característico Vans em waffle.`,
     cores: [
       {
         corId: 0,
@@ -3970,6 +4363,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Clássico Vans é atemporal. Autenticidade “Off The Wall” na essência. Um visual tradicional que nunca sai de moda. A Camiseta Ss Black é icônica e não passa despercebida. De silhueta clássica com corte mais ajustado ao corpo, a camiseta masculina de manga curta Vans é confeccionada em algodão fio 20.1. Apresenta estampa frontal icônica com assinatura Vans com o skate e inscrição “Off The Wall” na altura do peito, no lado esquerdo, em silk à base d’água. Perfeita para todos os momentos.`,
     cores: [
       {
         corId: 0,
@@ -4029,6 +4424,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `O Style 76 apresenta design de corte baixo e cadarços feitos com tecido resistente de lona, além da característica sola de borracha waffle da Vans.`,
     cores: [
       {
         corId: 0,
@@ -4069,6 +4466,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Calça',
+    titleDescrition: '',
+    descrition: `A Calça Moletom Midnight é confeccionada em algodão e poliéster. O modelo clássico Vans de cintura média apresenta cós elástico com ajuste em cordão. Traz bolsos frontais em faca e aplicação de patch bordado Vans em “Drop V” na altura da coxa esquerda. Com bolso traseiro, o modelo possui comprimento mais longo, com shape solto, caimento reto e acabamento canelado.`,
     cores: [
       {
         corId: 0,
@@ -4099,6 +4498,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Fundada na Califórnia em 1966, a Vans está envolvida com a cultura de rua, artes, música e ligada ao skate e à evolução do esporte, sem perder a essência. Dos clássicos aos modernos, a Vans mantém o estilo "Off The Wall". Com um design exclusivo, o Top Longline Racerback Print Bralette Floral Checkerboard Sweet Lavender é confeccionado em algodão com estampa em checkerboard e floral por toda a peça, nos tons branco e lilás. Com decote arredondado e design estilo nadador, o top apresenta assinatura estampada da Vans em “Drop V” centralizada na altura do peito.`,
     cores: [
       {
         corId: 0,
@@ -4122,6 +4523,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Moletom',
+    titleDescrition: '',
+    descrition: `Um clássico é sempre clássico. A tradição que as peças Vans carregam na essência permitem um visual atemporal, que combina o estilo tradicional com o conforto aconchegante para os dias mais frios. O Moletom Classic V Ii Black é confeccionado em algodão e poliéster. O modelo feminino na cor preta, é fechado com bolso canguru. Com caimento estilo “boyfriend”, o moletom possui capuz com cadarço para ajuste com acabamento em cobre gola, rib nos punhos e na barra. Traz estampa frontal exclusiva em silk à base d’água em logotipo Vans “Drop V” centralizado na altura do peito.`,
     cores: [
       {
         corId: 0,
@@ -4170,6 +4573,8 @@ export const vansRoupas = [
     tipo: 'Roupa',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: ``,
     cores: [
       {
         corId: 0,
@@ -4200,6 +4605,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Fundada na Califórnia em 1966, a Vans está presente na cultura de rua, artes, música e ligada ao skate e à evolução do esporte, sem perder a essência. Dos clássicos aos modernos, o estilo "Off The Wall" das peças icônicas que carregam a tradição da Vans são inconfundíveis. A Regata Junior V Sweet Lavender feminina é confeccionada em algodão. O modelo apresenta gola redonda canelada e traz costura reforçada nos ombros. Imponente e cheia de atitude, ela tem corte clássico e silhueta com modelagem oversized - que veste mais soltinha no corpo. Apresenta assinatura Vans em “Drop V” aplicada em patch bordado na altura do peito no lado esquerdo.`,
     cores: [
       {
         corId: 0,
@@ -4221,6 +4628,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Arte e cultura de rua trazem referências icônicas para as peças clássicas da Vans. Confortável o bastante para usar todos os dias e em qualquer ocasião, a Camiseta Boadean Crew Ss Black traz estampa clássica com os esqueletos de caveiras segurando pela coleira os esqueletos de dois cachorros, um ícone da Vans - com um toque descontraído, colorido e divertido - tanto na parte frontal na altura do peito, no lado esquerdo, quanto nas costas, ambas em silk à base d’água. Em algodão 100%, a camiseta feminina de manga curta preta possui costura reforçada nos ombros, gola canelada e aplicação de etiqueta com logotipo original Vans na manga. Modelagem de corte clássico e oversized no comprimento.`,
     cores: [
       {
         corId: 0,
@@ -4263,6 +4672,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Fundada na Califórnia em 1966, a VANS está envolvida com a cultura de rua, artes, música e ligada ao skate e à evolução do esporte, sem perder a essência. Dos clássicos aos modernos, a VANS possui uma enorme variedade de modelos de tênis, roupas e acessórios, sempre matendo o estilo "Off The Wall". A camiseta Vans Classic de manga curta, possui o logo Vans "drop V" estampado na altura do peito, etiqueta Vans aplicada na manga, gola canelada, costura reforçada nos ombros e é feita de 100% algodão. Tipo de modelagem: classic.`,
     cores: [
       {
         corId: 0,
@@ -4322,6 +4733,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: "Clássico Vans é atemporal. Autenticidade “Off The Wall” na essência. Um visual tradicional que nunca sai de moda. A Camiseta Flying V Crew Infantil White é icônica e não passa despercebida. De silhueta clássica com corte mais ajustado ao corpo, a camiseta feminina infantil branca de manga curta Vans é confeccionada em algodão 100%, gola canelada, costuras aparentes em pespontos nas mangas e barra, com etiqueta tecida com logotipo Vans aplicada na lateral. Apresenta estampa frontal icônica com assinatura Vans em “Drop V” centralizado na altura do peito, em silk à base d'água. Perfeita para todos os momentos das pequenas, a camiseta clássica é totalmente fácil de vestir, para que a única preocupação seja brincar e curtir em todas as aventuras! Tipo de caimento: regular.",
     cores: [
       {
         corId: 0,
@@ -4345,6 +4758,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Clássico Vans é atemporal. Autenticidade “Off The Wall” na essência. Um visual tradicional que nunca sai de moda desde os primeiros passos, tornando-se referência para os pequenos. O Moletom Classic Crew Infantil Black White é icônico e não passa despercebido. Honrando as tradições, o moletom preto carrega a herança “Off The Wall” para compor um visual despojado e esportivo, com total conforto. O moletom careca é confeccionado em poliéster e algodão, possui aplicação de rib na gola, punho e na barra. Na cor cinza, o moletom infantil traz estampa frontal com assinatura Vans em “Drop V” centralizada na altura do peito, em silk à base d’água. O caimento do moletom é mais solto, trazendo leveza e conforto ao vestir.`,
     cores: [
       {
         corId: 0,
@@ -4379,6 +4794,8 @@ export const vansRoupas = [
     tipo: 'Roupas',
     text: '',
     categoria: 'Camiseta',
+    titleDescrition: '',
+    descrition: `Fundada na Califórnia em 1966, a Vans está envolvida com a cultura de rua, artes, música e ligada ao skate e à evolução do esporte, sem perder a essência. Dos clássicos aos modernos, a Vans possui uma enorme variedade de modelos de tênis, roupas e acessórios, sempre mantendo o estilo "Off The Wall". O Moletom Vans Classic Po Ii Infantil Black White com capuz possui estampa o logo Vans em “Drop V" aplicado na altura do peito em silk à base d’água, etiqueta tecida com logo Vans lateral, capuz com cordão para regulagem, bolso estilo canguru, barra e punhos canelados e é confeccionado em 60% algodão e 40% poliéster. Tipo de caimento: custom.`,
     cores: [
       {
         corId: 0,
@@ -4436,9 +4853,7 @@ function gerarNumeroAleatorio(min, max) {
 if (!data) {
   localStorage.setItem("dataAtual", dataFormatada);
   const numeroAleatorio = gerarNumeroAleatorio(1, 100);
-  console.log('entrou', numeroAleatorio)
 }
 if (data && data !== dataFormatada) {
   const numeroAleatorio = gerarNumeroAleatorio(1, 100);
-  console.log('trueeeee', numeroAleatorio)
 }

@@ -53,10 +53,6 @@ export default function ProductDetalhe() {
             {a[0].map((as, index) => (
               <div onClick={() => handleClick(as.corId)}>
                 <img src={as.images[0]} alt="" style={{ height: '100px' }} />
-                <h3>{index}</h3>
-                <h3>{as.corId}</h3>
-                <h3>{as.priceOriginal}</h3>
-                <h3>{as.pricePromo ? as.pricePromo : ''}</h3>
               </div>
             ))}
           </div>

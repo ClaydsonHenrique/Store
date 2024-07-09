@@ -66,7 +66,7 @@ export const adidasShoes = [
         ]
       },
       {
-        corId: 2,
+        corId: 3,
         nome: 'Sand Strata / Sand Strata / Super Pop',
         priceOriginal: 'R$799,99',
         pricePromo: null,

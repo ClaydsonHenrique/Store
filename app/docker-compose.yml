@@ -35,7 +35,7 @@ services:
       - DB_HOST=db
       - DB_PORT=3306
     healthcheck:
-      test: ["CMD", "lsof", "-t", "-i:3001"] # Caso utilize outra porta interna para o back, altere ela aqui também
+      test: ["CMD", "lsof", "-t", "-i:3003"] # Caso utilize outra porta interna para o back, altere ela aqui também
       timeout: 10s
       retries: 5
   db:

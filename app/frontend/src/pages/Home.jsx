@@ -24,11 +24,42 @@ import 'swiper/css/scrollbar';
 function Home() {
   const [produtos, setProdutos] = useState([]);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
   useEffect(() => {
     const randomProducts = getRandomProdutos(27);
     setProdutos(randomProducts);
   }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      const result = await getApi();
+      console.log(result);
+    }
+
+    fetchData();
+  }, []);
+
+  async function postApi(data) {
+    const response = await fetch("http://localhost:3003/products", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
+    const result = await response.json();
+    return result;
+  }
+
+  async function getApi() {
+    const response = await fetch("http://localhost:3003/products");
+    const result = await response.json();
+    return result;
+  }
+  
+  const a = getApi()
+  console.log(a)
 
   function getRandomProdutos(count) {
     const shuffledShoes = allProdutcts.slice();
@@ -44,53 +75,47 @@ function Home() {
   }
 
   const detailProduct = (id) => {
-    dispatch(addProduct(id))
-    navigate(`/detalhes/${id}`)
+    dispatch(addProduct(id));
+    navigate(`/detalhes/${id}`);
   }
 
   return (
-    <section >
+    <section>
       <div className="section-home">
-
-        <div className=" renderProducts">
-          <RenderNike></RenderNike>
-          <RenderAdidas></RenderAdidas>
-          <RenderVans></RenderVans>
+        <div className="renderProducts">
+          <RenderNike />
+          <RenderAdidas />
+          <RenderVans />
         </div>
         <section style={{ display: 'flex', flexWrap: 'wrap', width: '100%', justifyContent: 'center' }}>
-          {produtos.map(
-            ({ categoria, cores, genero, marca, name, id }, index) => (
-              <div key={index} style={{ width: '400px', margin: '10px 40px' }}>
-                {index >= 0 && (
-                  <div className="products">
-                    <p className="tipo">{categoria}</p>
-                    <h2 className="tipo">{marca}</h2>
-                    <h1 className="titulo" style={{ maxWidthidth: '100%' }}>
-                      {" "}
-                      {name}
-                    </h1>
-                    <img
-                      src={cores[0].images[0]}
-                      alt=""
-                      className="imagem-home"
-                    />
-                    <>
-                      {cores[0].pricePromo !== '' ?
-                        <div style={{ display: 'flex' }}>
-                          <p className="priceDisable"><s>{cores[0].priceOriginal}</s></p>
-                          <p style={{ color: 'red' }}>{cores[0].pricePromo}</p>
-                        </div>
-                        :
-                        <p>{cores[0].priceOriginal}</p>
-                      }
-                    </>
-                    <div className="container-tamanho"></div>
-                    <button onClick={() => detailProduct(id)} >mais detalhes</button>
-                  </div>
-                )}
-              </div>
-            )
-          )}
+          {produtos.map(({ categoria, cores, genero, marca, name, id }, index) => (
+            <div key={index} style={{ width: '400px', margin: '10px 40px' }}>
+              {index >= 0 && (
+                <div className="products">
+                  <p className="tipo">{categoria}</p>
+                  <h2 className="tipo">{marca}</h2>
+                  <h1 className="titulo" style={{ maxWidthidth: '100%' }}>
+                    {name}
+                  </h1>
+                  <img
+                    src={cores[0].images[0]}
+                    alt=""
+                    className="imagem-home"
+                  />
+                  {cores[0].pricePromo !== '' ? (
+                    <div style={{ display: 'flex' }}>
+                      <p className="priceDisable"><s>{cores[0].priceOriginal}</s></p>
+                      <p style={{ color: 'red' }}>{cores[0].pricePromo}</p>
+                    </div>
+                  ) : (
+                    <p>{cores[0].priceOriginal}</p>
+                  )}
+                  <div className="container-tamanho"></div>
+                  <button onClick={() => detailProduct(id)}>mais detalhes</button>
+                </div>
+              )}
+            </div>
+          ))}
         </section>
       </div>
     </section>

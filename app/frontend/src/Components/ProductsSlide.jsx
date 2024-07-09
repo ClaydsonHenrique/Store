@@ -46,7 +46,7 @@ function ProductSlider({ products, brandName }) {
         className="mySwiper center-swiper"
         loop={true}
         autoplay={{
-          delay: 10000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
       >

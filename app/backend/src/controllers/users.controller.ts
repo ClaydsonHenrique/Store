@@ -67,4 +67,4 @@ const getUser = async (req: Request, res: Response) => {
   return res.status(200).send(user);
 };
 
-export { Login, registreUsers, getUser };
+export { Login, registreUsers, getUser, updateUserController };

@@ -16,7 +16,9 @@ const createProduct = async (req: Request, res: Response) => {
     categoria,
     marca,
     cor,
-    imagens
+    imagens,
+    tumblr,
+    quantidade,
   } = req.body;
   
   const productId = await addProduct({
@@ -29,6 +31,8 @@ const createProduct = async (req: Request, res: Response) => {
     marca,
     cor,
     imagens,
+    tumblr,
+    quantidade,
   });
   res.status(201).json(productId)
 };

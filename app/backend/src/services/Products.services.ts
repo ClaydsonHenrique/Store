@@ -30,8 +30,6 @@ const getAllProducts = async () => {
   return { status: 200, data: allProducts };
 };
 
-
-
 interface IaddProduct {
   productName: string;
   descricao: string;
@@ -41,9 +39,10 @@ interface IaddProduct {
   categoria: string;
   marca: string;
   cor: string;
-  imagens:  string[] ;
+  imagens: string[];
+  tumblr: string;
+  quantidade: number;
 }
-
 
 const addProduct = async (param: IaddProduct) => {
   
@@ -93,6 +92,8 @@ const addProduct = async (param: IaddProduct) => {
     marcasId: marca.id,
     coresId: cor.id,
     imagens: param.imagens,
+    tumblr: param.tumblr,
+    quantidade: param.quantidade,
   });
 
   return { status: 201, data: product };
@@ -109,7 +110,6 @@ interface UpdateData {
   marca?: { brandName: string };
   imagens?: string[] ;
 }
-
 
 const updateProduct = async (
   id: number,

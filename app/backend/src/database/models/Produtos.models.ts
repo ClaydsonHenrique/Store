@@ -19,11 +19,13 @@ class Products extends Model<
   declare descricao: string;
   declare preco: number;
   declare promo: number;
+  declare quantidade: number;
   declare genero: string;
   declare coresId: number;
   declare categoriasId: number;
   declare marcasId: number;
-  declare imagens: string[] ;
+  declare imagens: string[];
+  declare tumblr: string;
 }
 
 Products.init(
@@ -70,6 +72,14 @@ Products.init(
       type: DataTypes.JSON,
       allowNull: true,
     },
+    tumblr: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+     quantidade: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    }
   },
   {
     sequelize: db,

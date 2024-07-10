@@ -10,6 +10,7 @@ const validateToken = (req:Request, res:Response, next:NextFunction) => {
   if (!tokenVerify) {
     return res.status(401).json({message:'Token must be a valid token'})
   }
+  
   next();
 }
 

@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import LoginRouter from './router/user.router';
 import ProductsRouter from './router/product.router';
 import CarrinhoRouter from './router/carrinho.router';
+
 dotenv.config();
 
 class App {

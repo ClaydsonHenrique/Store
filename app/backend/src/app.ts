@@ -2,12 +2,10 @@ import  express from "express";
 import "express-async-errors";
 import errorMiddleware from "./middleware/errorMiddleware";
 
-import { Login, registreUsers, getUser } from "./controllers/users.controller";
-import { erroLogin, erroCreateUser } from "./middleware/erroLogin,middleware";
-
-import { AllProducts, createProduct, upProduct } from "./controllers/Prodcuts.controller";
-
 import dotenv from "dotenv";
+import LoginRouter from './router/user.router';
+import ProductsRouter from './router/product.router';
+import CarrinhoRouter from './router/carrinho.router';
 dotenv.config();
 
 class App {
@@ -22,14 +20,13 @@ class App {
     this.app.get("/", (req, res) => res.json({ ok: true }));
 
     // Login
-    this.app.get("/login", getUser);
-    this.app.post("/login",erroLogin, Login);
-    this.app.put("/login",erroCreateUser, registreUsers);
+    this.app.use(LoginRouter)
 
     //  Produtos
-    this.app.get("/products", AllProducts);
-    this.app.post("/products", createProduct);
-    this.app.put("/products/:id", upProduct)
+    this.app.use(ProductsRouter)
+    
+    // Carrinho
+    this.app.use(CarrinhoRouter)
     
     // Não remova esse middleware de erro, mas fique a vontade para customizá-lo
     // Mantenha ele sempre como o último middleware a ser chamado

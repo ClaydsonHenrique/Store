@@ -4,7 +4,7 @@ import { IOrders } from '../../Interfaces/IOrders';
 
 export default {
   up(QueryInterface: QueryInterface) {
-    return QueryInterface.createTable<Model<IOrders>>("shoppingCart", {
+    return QueryInterface.createTable<Model<IOrders>>("orders", {
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -23,6 +23,6 @@ export default {
   },
 
   down(QueryInterface: QueryInterface) {
-    return QueryInterface.dropTable("shoppingCart");
+    return QueryInterface.dropTable("orders");
   },
 };

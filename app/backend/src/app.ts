@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import LoginRouter from './router/user.router';
 import ProductsRouter from './router/product.router';
 import CarrinhoRouter from './router/carrinho.router';
+import OrdersRouter from './router/orders.router';
 
 dotenv.config();
 
@@ -28,6 +29,9 @@ class App {
     
     // Carrinho
     this.app.use(CarrinhoRouter)
+    
+    // Pedidos
+    this.app.use(OrdersRouter);
     
     // Não remova esse middleware de erro, mas fique a vontade para customizá-lo
     // Mantenha ele sempre como o último middleware a ser chamado

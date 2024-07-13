@@ -55,5 +55,4 @@ Orders.belongsTo(ShoppingCart, {
 });
 ShoppingCart.hasMany(Orders, { foreignKey: "shoppingCartId", as: "orders" });
 
-
 export default Orders;

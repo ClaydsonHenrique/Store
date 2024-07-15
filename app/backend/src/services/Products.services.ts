@@ -32,16 +32,16 @@ const getAllProducts = async () => {
 
 interface IaddProduct {
   productName: string;
-  descricao: string;
-  preco: number;
-  genero: string;
+  description: string;
+  price: number;
+  gender: string;
   promo?: number;
-  categoria: string;
-  marca: string;
-  cor: string;
-  imagens: string[];
-  tumblr: string;
-  quantidade: number;
+  categories: string;
+  brands: string;
+  colors: string;
+  images: string[];
+  thumbnail: string;
+  quantity: number;
 }
 
 const addProduct = async (param: IaddProduct) => {
@@ -55,45 +55,45 @@ const addProduct = async (param: IaddProduct) => {
     }
   
   let category = await Categorias.findOne({
-    where: { categName: param.categoria },
+    where: { categName: param.categories },
   });
 
 
   if (!category) {
     category = await Categorias.create({
-      categName: param.categoria,
+      categName: param.categories,
     });
   }
 
-  let marca = await Marcas.findOne({ where: { brandName: param.marca } });
+  let marca = await Marcas.findOne({ where: { brandName: param.brands } });
 
   if (!marca) {
     marca = await Marcas.create({
-      brandName: param.marca,
+      brandName: param.brands,
     });
   }
 
-  let cor = await Cores.findOne({ where: { colorName: param.cor } });
+  let cor = await Cores.findOne({ where: { colorName: param.colors } });
 
   if (!cor) {
     cor = await Cores.create({
-      colorName: param.cor,
+      colorName: param.colors,
     });
   }
 
 
   const product = await Products.create({
     productName: param.productName,
-    descricao: param.descricao,
-    preco: param.preco,
+    description: param.description,
+    price: param.price,
     promo: param.promo || 0,
-    genero: param.genero,
-    categoriasId: category.id,
-    marcasId: marca.id,
-    coresId: cor.id,
-    imagens: param.imagens,
-    tumblr: param.tumblr,
-    quantidade: param.quantidade,
+    gender: param.gender,
+    categoriesId: category.id,
+    brandsId: marca.id,
+    colorsId: cor.id,
+    images: param.images,
+    thumbnail: param.thumbnail,
+    quantity: param.quantity,
   });
 
   return { status: 201, data: product };

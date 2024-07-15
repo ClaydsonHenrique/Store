@@ -16,16 +16,16 @@ class Products extends Model<
 > {
   declare id: CreationOptional<number>;
   declare productName: string;
-  declare descricao: string;
-  declare preco: number;
+  declare description: string;
+  declare price: number;
   declare promo: number;
-  declare quantidade: number;
-  declare genero: string;
-  declare coresId: number;
-  declare categoriasId: number;
-  declare marcasId: number;
-  declare imagens: string[];
-  declare tumblr: string;
+  declare gender: string;
+  declare colorsId: number;
+  declare categoriesId: number;
+  declare brandsId: number;
+  declare images: string[];
+  declare thumbnail: string;
+  declare  quantity: number;
 }
 
 Products.init(
@@ -40,46 +40,46 @@ Products.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    descricao: {
+    description: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    preco: {
+    price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
     promo: {
       type: DataTypes.DECIMAL(10, 2),
-      allowNull: false,
+      allowNull: true,
     },
-    genero: {
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    gender: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    coresId: {
+    colorsId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    categoriasId: {
+    categoriesId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    marcasId: {
+    brandsId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    imagens: {
+    thumbnail: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    images: {
       type: DataTypes.JSON,
       allowNull: true,
     },
-    tumblr: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-     quantidade: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    }
   },
   {
     sequelize: db,

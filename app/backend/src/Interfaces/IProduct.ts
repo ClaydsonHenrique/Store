@@ -1,14 +1,14 @@
 export interface IProducts {
   id: number;
   productName: string;
-  descricao: string;
-  preco: string;
-  promo: string;
-  genero: string;
-  coresId: number;
-  categoriasId: number;
-  marcasId: number;
-  imagens: string[];
-  tumblr: string;
-  quantidade: number;
+  description: string;
+  price: number;
+  promo: number;
+  gender: string;
+  colorsId: number;
+  categoriesId: number;
+  brandsId: number;
+  images: string[];
+  thumbnail: string;
+  quantity: number;
 }

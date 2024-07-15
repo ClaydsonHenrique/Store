@@ -8,31 +8,31 @@ const AllProducts = async (req: Request, res: Response) => {
 
 const createProduct = async (req: Request, res: Response) => {
   const {
-    productName,
-    descricao,
-    preco,
-    genero,
+   productName,
+    description,
+    price,
+    gender,
     promo,
-    categoria,
-    marca,
-    cor,
-    imagens,
-    tumblr,
-    quantidade,
+    categories,
+    brands,
+    colors,
+    images,
+    thumbnail,
+    quantity,
   } = req.body;
   
   const productId = await addProduct({
     productName,
-    descricao,
-    preco,
-    genero,
+    description,
+    price,
+    gender,
     promo: promo || "",
-    categoria,
-    marca,
-    cor,
-    imagens,
-    tumblr,
-    quantidade,
+    categories,
+    brands,
+    colors,
+    images,
+    thumbnail,
+    quantity,
   });
   res.status(201).json(productId)
 };

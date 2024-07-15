@@ -15,11 +15,11 @@ export default {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      descricao: {
+      description: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      preco: {
+      price: {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
       },
@@ -27,31 +27,31 @@ export default {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: true,
       },
-      quantidade: {
+      quantity: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      genero: {
+      gender: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      coresId: {
+      colorsId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      categoriasId: {
+      categoriesId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      marcasId: {
+      brandsId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      tumblr: {
+      thumbnail: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      imagens: {
+      images: {
         type: DataTypes.JSON,
         allowNull: true,
       },

@@ -71,6 +71,33 @@ export default {
         {
           colorName: "Branco/cinza",
         },
+        {
+          colorName: "Branco/azul claro",
+        },
+        {
+          colorName: "Amarelo claro",
+        },
+        {
+          colorName: "Laranja",
+        },
+        {
+          colorName: "Verde",
+        },
+        {
+          colorName: "Rosa escuro",
+        },
+        {
+          colorName: "Vermelho",
+        },
+        {
+          colorName: "Rosa",
+        },
+        {
+          colorName: "Rosa/ preto",
+        },
+        {
+          colorName: "Azul/ vermelho",
+        },
       ],
       {}
     );

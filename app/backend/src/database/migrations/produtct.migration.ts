@@ -27,6 +27,10 @@ export default {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: true,
       },
+      quantidade: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
       genero: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -42,6 +46,10 @@ export default {
       marcasId: {
         type: DataTypes.INTEGER,
         allowNull: false,
+      },
+      tumblr: {
+        type: DataTypes.STRING,
+        allowNull: true,
       },
       imagens: {
         type: DataTypes.JSON,

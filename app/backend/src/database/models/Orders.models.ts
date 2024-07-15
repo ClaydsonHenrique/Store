@@ -5,8 +5,8 @@ import {
   InferCreationAttributes,
   CreationOptional,
 } from "sequelize";
-import Users from './User.models';
-import ShoppingCart from './ShoppingCart.models';
+// import Users from './User.models';
+// import ShoppingCart from './ShoppingCart.models';
 import db from ".";
 
 class Orders extends Model<
@@ -45,14 +45,14 @@ Orders.init(
 
 // usuario
 
-Orders.belongsTo(Users, { foreignKey: "userId", as: "user" });
-Users.hasMany(Orders, { foreignKey: "userId", as: "orders" });
+// Orders.belongsTo(Users, { foreignKey: "userId", as: "user" });
+// Users.hasMany(Orders, { foreignKey: "userId", as: "orders" });
 
-// products
-Orders.belongsTo(ShoppingCart, {
-  foreignKey: "shoppingCartId",
-  as: "shoppingCart",
-});
-ShoppingCart.hasMany(Orders, { foreignKey: "shoppingCartId", as: "orders" });
+// // products
+// Orders.belongsTo(ShoppingCart, {
+//   foreignKey: "shoppingCartId",
+//   as: "shoppingCart",
+// });
+// ShoppingCart.hasMany(Orders, { foreignKey: "shoppingCartId", as: "orders" });
 
 export default Orders;

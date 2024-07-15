@@ -8,5 +8,7 @@ export interface IProducts {
   coresId: number;
   categoriasId: number;
   marcasId: number;
-  imagens:string[];
+  imagens: string[];
+  tumblr: string;
+  quantidade: number;
 }

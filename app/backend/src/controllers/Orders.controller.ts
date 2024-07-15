@@ -8,7 +8,7 @@ const getAllOrders = async (res:Response, req:Request) => {
   }
   const token = authorizationHeader.split(" ")[1];
   const resultOrders = await getAllOrdersService(token);
-  return res.status(200).json(resultOrders);
+  return res.status(resultOrders.status).json(resultOrders.data);
 }
 
 export default getAllOrders

@@ -20,6 +20,7 @@ const addProductToCartService = async (
   if (!tokenId) {
     throw new Error("Invalid token");
   }
+  
   const { id } = tokenId;
   const createCar = await Carrinho.create({
     userId: id,

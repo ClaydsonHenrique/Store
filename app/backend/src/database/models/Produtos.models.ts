@@ -90,17 +90,20 @@ Products.init(
 
 // cor
 Products.belongsTo(ProductsColor, {
-  foreignKey: "coresId",
+  foreignKey: "colorsId",
   as: "color",
 }); 
-ProductsColor.hasMany(Products, { foreignKey: "coresId"   });
+ProductsColor.hasMany(Products, { foreignKey: "colorsId" });
 
 // marca
-MarcaModel.hasMany(Products, { foreignKey: "marcasId" });
-Products.belongsTo(MarcaModel, {foreignKey: "marcasId", as: "marca"});
+MarcaModel.hasMany(Products, { foreignKey: "brandsId" });
+Products.belongsTo(MarcaModel, { foreignKey: "brandsId", as: "marca" });
 
 // categoria
-CartegModel.hasMany(Products, { foreignKey: "categoriasId" });
-Products.belongsTo(CartegModel, { foreignKey: "categoriasId", as: "categoria"  });
+CartegModel.hasMany(Products, { foreignKey: "categoriesId" });
+Products.belongsTo(CartegModel, {
+  foreignKey: "categoriesId",
+  as: "categoria",
+});
 
 export default Products;

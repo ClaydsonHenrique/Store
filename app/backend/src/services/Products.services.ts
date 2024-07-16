@@ -23,7 +23,7 @@ const getAllProducts = async () => {
       },
     ],
     attributes: {
-      exclude: ["coresId", "categoriasId", "marcasId"],
+      exclude: ["colorsId", "categoriesId", "brandsId"],
     },
   });
 

@@ -20,7 +20,6 @@ export default {
           quantity: 50,
           images: JSON.stringify([
             "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d4cde377d04d4b818dd4435d93e1b4fb_9366/Tênis OZWEEGOTenis_OZWEEGO_Cinza_ID9822_01_standard.jpg",
-            "https://assets.adidas.com/videos/ar_1,w_1080,c_fill,q_auto,f_auto/a3eb974da8094e4cb369bc723a61dcf9_d98c/Tenis_OZWEEGO_Cinza_ID9822_video.mp4",
             "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b51f8193885d40d5b52f57412411286a_9366/Tenis_OZWEEGO_Cinza_ID9822_04_standard.jpg",
             "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6f438b2603154d05986131ff94d0b586_9366/Tenis_OZWEEGO_Cinza_ID9822_05_standard.jpg",
             "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/2100272929424b94a8b56812cddaf163_9366/Tenis_OZWEEGO_Cinza_ID9822_06_standard.jpg",
@@ -77,7 +76,6 @@ export default {
             "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/052b4ba5d9a148709d47af9c00f80ba4_9366/Tenis_OZWEEGO_Cinza_HP6382_09_standard.jpg",
             "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/ebcb364df1614a84b1a4af9c00f7f09b_9366/Tenis_OZWEEGO_Cinza_HP6382_41_detail.jpg",
             "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/35eb6077bb7a43a88979af9c00f7fb66_9366/Tenis_OZWEEGO_Cinza_HP6382_42_detail.jpg",
-            "https://assets.adidas.com/videos/ar_1,w_720,c_fill,q_auto,f_auto/ee8748c1697d40b2a586afa500c7dd92_d98c/Tenis_OZWEEGO_Cinza_HP6382_video.mp4",
           ]),
         },
         {

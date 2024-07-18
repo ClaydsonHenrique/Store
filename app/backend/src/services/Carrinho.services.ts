@@ -7,7 +7,7 @@ const getProductsInCartService = async (token: string) => {
     throw new Error("Token inválido");
   }
   const { id } = tokenId;
-  const carrinho = await Carrinho.findAll({ where: { id } });
+  const carrinho = await Carrinho.findAll({ where: { userId: id } });
   return { status: 200, data: carrinho };
 };
 
@@ -20,7 +20,7 @@ const addProductToCartService = async (
   if (!tokenId) {
     throw new Error("Invalid token");
   }
-  
+
   const { id } = tokenId;
   const createCar = await Carrinho.create({
     userId: id,

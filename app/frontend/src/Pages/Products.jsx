@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { MethodGet } from '../FetchApi/ApiProducts'
 import { useEffect, useState } from 'react'
 import Loading from './Loading'
+import '../style/Product.css'
 
 function Products() {
 
@@ -21,12 +22,16 @@ function Products() {
       return products.slice(0, 20).map((product) => {
         return (
           <div className="card" key={product.id}>
-            <img src={product.image} alt={product.name} />
             <div className="card-body">
               <h5 className="card-title">{product.name}</h5>
-              <img src={product.images[0]} alt={product} />
-              <p className="card-text">{product.description}</p>
-              <Link to={`/products/${product.id}`} className="btn btn-primary">Detalhes</Link>
+              <img src={product.images[0]} alt={product} className='thumbnail'/>
+              {product.promo !== 0 ?
+                <div>
+                  <p style={{ color: 'red' }}>R$ {product.price}</p>
+                  <p>R$ {product.promo}</p>
+                </div>
+                : <p>{product.price}</p>}
+              <Link to={`/product/${product.id}`} className="btn btn-primary">Detalhes</Link>
             </div>
           </div>
         )

@@ -29,7 +29,7 @@ function Login({ addToken }) {
       if (response && response.token) {
         addToken(response.token);
         setError('');
-        navigate('/')
+        navigate('/product')
       } else {
         setError(response.message);
 
@@ -48,7 +48,7 @@ function Login({ addToken }) {
     <main className='Container-Login'>
       <nav>
         <ul>
-          <li><Link to = '/'>home</Link></li>
+          <li><Link to = '/product'>home</Link></li>
         </ul>
       </nav>
       <div className='Container-Login-Form'>

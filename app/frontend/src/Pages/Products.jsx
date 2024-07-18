@@ -41,6 +41,7 @@ function Products() {
             <ul>
               <li><Link to='/login'>login</Link></li>
               <li><Link to='/singIn'>SingIN</Link></li>
+              <li><Link to='/shoppingCart'>Shopping Cart</Link></li>
             </ul>
           </nav>
           <div>Escolha seus Produtos </div>

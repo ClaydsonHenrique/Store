@@ -30,6 +30,17 @@ const getAllProducts = async () => {
   return { status: 200, data: allProducts };
 };
 
+const ProductByIdServices = async (id: number) => {
+  if(!id) {
+    return { status: 400, message: "Id is required" }
+  }
+  const getProduct = await Products.findByPk(id);
+  if(!getProduct) {
+    return { status: 404, data: "Produto não encontrado" };
+  }
+  return { status: 200, data: getProduct}
+};
+
 interface IaddProduct {
   productName: string;
   description: string;
@@ -45,19 +56,17 @@ interface IaddProduct {
 }
 
 const addProduct = async (param: IaddProduct) => {
-  
-    const existingProduct = await Products.findOne({
-      where: { productName: param.productName },
-    });
+  const existingProduct = await Products.findOne({
+    where: { productName: param.productName },
+  });
 
-    if (existingProduct) {
-      return { status: 409, data: null, message: "Produto já existe." };
-    }
-  
+  if (existingProduct) {
+    return { status: 409, data: null, message: "Produto já existe." };
+  }
+
   let category = await Categorias.findOne({
     where: { categName: param.categories },
   });
-
 
   if (!category) {
     category = await Categorias.create({
@@ -80,7 +89,6 @@ const addProduct = async (param: IaddProduct) => {
       colorName: param.colors,
     });
   }
-
 
   const product = await Products.create({
     productName: param.productName,
@@ -108,7 +116,7 @@ interface UpdateData {
   color?: { colorName: string };
   categoria?: { categName: string };
   marca?: { brandName: string };
-  imagens?: string[] ;
+  imagens?: string[];
 }
 
 const updateProduct = async (
@@ -116,13 +124,12 @@ const updateProduct = async (
   updateData: UpdateData
 ): Promise<{ status: number; data: any }> => {
   const product = await Products.findByPk(id);
-  console.log(product)
+  console.log(product);
 
   if (!product) {
     return { status: 404, data: { message: "Produto não encontrado." } };
   }
 
-  
   try {
     await product.update(updateData);
 
@@ -131,7 +138,6 @@ const updateProduct = async (
       data: { updateData },
     };
   } catch (error: any) {
- 
     return {
       status: 500,
       data: { message: "Erro ao atualizar o produto.", error: error.message },
@@ -139,4 +145,4 @@ const updateProduct = async (
   }
 };
 
-export { getAllProducts, addProduct, updateProduct };
+export { getAllProducts, addProduct, updateProduct, ProductByIdServices };

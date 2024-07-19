@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom'
-import { getById } from '../FetchApi/ApiProducts';
+import { Link, useParams, useNavigate } from 'react-router-dom'
+import { add_Produc_ShoppingCart, getById } from '../FetchApi/ApiProducts';
 import '../style/ProductDetails.css'
 import Loading from './Loading';
+import { connect } from 'react-redux';
 
 
-function ProductDetails() {
+function ProductDetails({ token }) {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState('');
+  const [quantity, setQuantity] = useState(0);
+  const navigate = useNavigate();
 
 
   const fetchProduct = async () => {
@@ -21,6 +24,25 @@ function ProductDetails() {
       throw error
     }
   }
+  console.log(token, 'verificando token')
+
+  const add_Prodict_shoppingCart = async () => {
+    try {
+      if (!token) {
+        navigate('/login')
+      }
+      let value = quantity
+      setQuantity(value += 1)
+      const addProduct = await add_Produc_ShoppingCart(token, product.id, quantity)
+      console.log(addProduct)
+      return addProduct
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
+
 
   useEffect(() => {
     fetchProduct()
@@ -45,7 +67,12 @@ function ProductDetails() {
     <main>
       {!loading ? <Loading ></Loading> :
         <section>
-          <Link to='/product' > Produtos</Link>
+          <ul>
+            <li><Link to='/signUp' > signUp</Link></li>
+            <li><Link to='/login' > login</Link></li>
+            <li><Link to='/product' > Produtos</Link></li>
+            <li><Link to='/shoppingCart' > Shopping Cart</Link></li>
+          </ul>
           <section className='container'>
             <div>
               {product.images && <img src={product.images[0]} alt={product.productName} className='renderImage' />}
@@ -55,12 +82,12 @@ function ProductDetails() {
             </div>
             <div>
               <h1>{product.productName}</h1>
-              {product.promo !== 0 ?
+              {product.promo !== '0.00' ?
                 <div>
                   <h2 style={{ color: 'red' }}>Preço: R$ {product.price}</h2>
                   <h2> R$ {product.promo}</h2>
                 </div> : <p>{product.price}</p>}
-              <button>adicionar ao carrinho</button>
+              <button onClick={add_Prodict_shoppingCart}>adicionar ao carrinho</button>
               <button>Comprar</button>
             </div>
           </section>
@@ -73,4 +100,9 @@ function ProductDetails() {
     </main>
   )
 }
-export default ProductDetails
+
+const mapStateToProps = (state) => ({
+  token: state.token.token,
+});
+
+export default connect(mapStateToProps)(ProductDetails);

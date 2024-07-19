@@ -60,7 +60,7 @@ function Login({ addToken }) {
         </form>
         {error && <p>{error}</p>}
         <div>
-          <button className='buton-router-singIn' onClick={NavigateSingIn}>cadastrar</button>
+          <button className='buton-router-signUp' onClick={NavigateSingIn}>cadastrar</button>
         </div>
       </div>
     </main>

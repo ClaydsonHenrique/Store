@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
-function SingIn () {
+function SingUp () {
   const handleSubmit = () => {
     console.log('submit');
   }
   return (
-    <div className="SingIn">
+    <div className="SingUp">
       <div>
         <ul>
           <li><Link to = '/login'>Login</Link></li>
@@ -13,7 +13,7 @@ function SingIn () {
         </ul>
       </div>
       <h1>Sign In</h1>
-      <form className='form-singIn' onSubmit={handleSubmit}>
+      <form className='form-SingUp' onSubmit={handleSubmit}>
         <input type="text" name="username" id="username" placeholder='usermane' />
         <input type="text" name="email" id="email" placeholder='email' />
         <input type="text" name="endereço" id="endereço" placeholder='endereço' />
@@ -24,4 +24,4 @@ function SingIn () {
   )
 }
 
-export default SingIn
+export default SingUp

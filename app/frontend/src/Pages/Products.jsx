@@ -25,7 +25,7 @@ function Products() {
             <div className="card-body">
               <h5 className="card-title">{product.name}</h5>
               <img src={product.images[0]} alt={product} className='thumbnail'/>
-              {product.promo !== 0 ?
+              {product.promo !== '0.00' ?
                 <div>
                   <p style={{ color: 'red' }}>R$ {product.price}</p>
                   <p>R$ {product.promo}</p>
@@ -45,7 +45,7 @@ function Products() {
           <nav>
             <ul>
               <li><Link to='/login'>login</Link></li>
-              <li><Link to='/singIn'>SingIN</Link></li>
+              <li><Link to='/signUp'>signUp</Link></li>
               <li><Link to='/shoppingCart'>Shopping Cart</Link></li>
             </ul>
           </nav>

@@ -1,5 +1,7 @@
+import { Model } from 'sequelize';
 import Carrinho from "../database/models/ShoppingCart.models";
 import { verifyToken } from "../utils/token.utils";
+import Products from '../database/models/Produtos.models';
 
 const getProductsInCartService = async (token: string) => {
   const tokenId = verifyToken(token);
@@ -7,7 +9,14 @@ const getProductsInCartService = async (token: string) => {
     throw new Error("Token inválido");
   }
   const { id } = tokenId;
-  const carrinho = await Carrinho.findAll({ where: { userId: id } });
+  const carrinho = await Carrinho.findAll({
+    include: [
+      {
+        model: Products,
+        as: "product",
+      },
+    ],
+  });
   return { status: 200, data: carrinho };
 };
 
@@ -20,7 +29,7 @@ const addProductToCartService = async (
   if (!tokenId) {
     throw new Error("Invalid token");
   }
-
+  
   const { id } = tokenId;
   const createCar = await Carrinho.create({
     userId: id,

@@ -6,6 +6,8 @@ import {
   CreationOptional,
 } from "sequelize";
 import db from ".";
+import Products from './Produtos.models';
+import Users from './User.models';
 
 class ShoppingCart extends Model<
   InferAttributes<ShoppingCart>,
@@ -26,12 +28,20 @@ ShoppingCart.init(
       primaryKey: true,
     },
     idProduct: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: Products,
+        key: "id",
+      },
     },
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: Users,
+        key: "id",
+      },
     },
     quantidade: {
       type: DataTypes.INTEGER,
@@ -41,8 +51,15 @@ ShoppingCart.init(
   {
     sequelize: db,
     modelName: "shoppingCart",
+    tableName: "shoppingCart", // Nome correto da tabela
     timestamps: false,
   }
 );
+
+ShoppingCart.belongsTo(Users, { foreignKey: "userId", as: "user" });
+ShoppingCart.belongsTo(Products, { foreignKey: "idProduct", as: "product" });
+
+Users.hasMany(ShoppingCart, { foreignKey: "userId" });
+Products.hasMany(ShoppingCart, { foreignKey: "idProduct" });
 
 export default ShoppingCart;

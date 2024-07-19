@@ -2,7 +2,7 @@ import React from "react";
 import Login from './Pages/Login.jsx';
 import { Route, Routes } from 'react-router-dom';
 import Products from './Pages/Products.jsx';
-import SingIn from './Pages/SingIn.jsx';
+import SingUp from './Pages/SingUp.jsx';
 import ShoppingCart from './Pages/ShoppingCart.jsx';
 import ProductDetails from './Pages/ProductDetails.jsx';
 
@@ -16,7 +16,7 @@ function App() {
       <Route path='/product' element={<Products/>} />
       <Route path='/product/:id' element={<ProductDetails/>}/>
       <Route path='/login' element={<Login/>} />
-      <Route path='/singIn' element={<SingIn/>} />
+      <Route path='/signUp' element={<SingUp />} />
       <Route path='/shoppingCart' element={<ShoppingCart/>}/>
     </Routes>
   );

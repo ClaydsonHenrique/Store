@@ -32,12 +32,12 @@ const registerUser = async (userData: createUser) => {
   const newUser = await UserModels.create({
     username,
     email,
-    tumrbl,
+    tumrbl: tumrbl || "",
     password: bcryptPassword,
     role: "USER",
-    endereco, 
+    endereco,
     cep,
-    telefone
+    telefone,
   });
   return newUser;
 };

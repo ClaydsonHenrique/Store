@@ -45,7 +45,7 @@ function Products() {
           <nav>
             <ul>
               <li><Link to='/login'>login</Link></li>
-              <li><Link to='/signUp'>signUp</Link></li>
+              <li><Link to='/register'>signUp</Link></li>
               <li><Link to='/shoppingCart'>Shopping Cart</Link></li>
             </ul>
           </nav>

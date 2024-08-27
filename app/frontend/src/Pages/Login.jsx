@@ -41,7 +41,7 @@ function Login({ addToken }) {
   }
   
   const NavigateSingIn = () => {
-    navigate('/singIn')
+    navigate('/register')
   }
 
   return (

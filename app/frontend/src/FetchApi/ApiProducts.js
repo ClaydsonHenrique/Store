@@ -75,15 +75,15 @@ export const add_Produc_ShoppingCart = async (token, product, quantity) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },
-      body: JSON.stringify(product, quantity)
-    })
-    if (!response) {
-      throw new Error('Network response was not ok')
+      body: JSON.stringify({ productId: product, quantidade: quantity })
+    });
+    if (!response.ok) { 
+      throw new Error('Network response was not ok');
     }
-    const data = await response.json()
+    const data = await response.json();
     return data;
   } catch (error) {
     console.log(error);
-    throw error
+    throw error;
   }
 }

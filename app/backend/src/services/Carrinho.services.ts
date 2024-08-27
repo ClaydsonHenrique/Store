@@ -13,7 +13,7 @@ const getProductsInCartService = async (token: string) => {
     include: [
       {
         model: Products,
-        as: "product",
+        as: "product", 
       },
     ],
   });

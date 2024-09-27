@@ -26,7 +26,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getallUser = exports.registerUser = exports.login = void 0;
+exports.updateUser = exports.getallUser = exports.registerUser = exports.login = void 0;
 const bcrypt = __importStar(require("bcryptjs"));
 const User_models_1 = __importDefault(require("../database/models/User.models"));
 const token_utils_1 = require("../utils/token.utils");
@@ -41,25 +41,46 @@ const login = async (user) => {
     if (!verfifyPassword) {
         return { status: 401, data: { message: 'Invalid email or password' } };
     }
-    const { role } = verifyLogin;
-    const token = (0, token_utils_1.sign)({ email, role });
+    const { role, id } = verifyLogin;
+    const token = (0, token_utils_1.sign)({ id, email, role });
     return { status: 200, data: { token } };
 };
 exports.login = login;
 const registerUser = async (userData) => {
-    const { name, lastname, email, password, tumrbl } = userData;
+    const { name, lastname, email, password, tumrbl, endereco, cep, telefone } = userData;
     const username = `${name} ${lastname}`;
     const bcryptPassword = bcrypt.hashSync(password, SALT_ROUNDS);
     const newUser = await User_models_1.default.create({
         username,
         email,
-        tumrbl,
+        tumrbl: tumrbl || "",
         password: bcryptPassword,
         role: "USER",
+        endereco,
+        cep,
+        telefone,
     });
     return newUser;
 };
 exports.registerUser = registerUser;
+const updateUser = async (userUpdate, token) => {
+    let { ...dataUpdate } = userUpdate;
+    const tokenPayload = (0, token_utils_1.verifyToken)(token);
+    if (!tokenPayload) {
+        throw new Error("Invalid token");
+    }
+    const { id } = tokenPayload;
+    const user = await User_models_1.default.findOne({ where: { id } });
+    if (!user) {
+        throw new Error("User not found");
+    }
+    if (dataUpdate.password) {
+        dataUpdate.password = bcrypt.hashSync(dataUpdate.password, SALT_ROUNDS);
+    }
+    const updateUser = await User_models_1.default.update(dataUpdate, { where: { id } });
+    return updateUser;
+};
+exports.updateUser = updateUser;
 const getallUser = async () => {
     const user = await User_models_1.default.findAll();
     return user;

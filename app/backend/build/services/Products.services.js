@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateProduct = exports.addProduct = exports.getAllProducts = void 0;
+exports.ProductByIdServices = exports.updateProduct = exports.addProduct = exports.getAllProducts = void 0;
 const Produtos_models_1 = __importDefault(require("../database/models/Produtos.models"));
 const Categoria_models_1 = __importDefault(require("../database/models/Categoria.models"));
 const Marcas_models_1 = __importDefault(require("../database/models/Marcas.models"));
@@ -14,26 +14,37 @@ const getAllProducts = async () => {
             {
                 model: Categoria_models_1.default,
                 as: "categoria",
-                attributes: ["id", "categName"],
+                attributes: ["categName"],
             },
             {
                 model: Marcas_models_1.default,
                 as: "marca",
-                attributes: ["id", "brandName"],
+                attributes: ["brandName"],
             },
             {
                 model: Cores_models_1.default,
                 as: "color",
-                attributes: ["id", "colorName", "quantity"],
+                attributes: ["colorName"],
             },
         ],
         attributes: {
-            exclude: ["coresId", "categoriasId", "marcasId"],
+            exclude: ["colorsId", "categoriesId", "brandsId"],
         },
     });
     return { status: 200, data: allProducts };
 };
 exports.getAllProducts = getAllProducts;
+const ProductByIdServices = async (id) => {
+    if (!id) {
+        return { status: 400, message: "Id is required" };
+    }
+    const getProduct = await Produtos_models_1.default.findByPk(id);
+    if (!getProduct) {
+        return { status: 404, data: "Produto não encontrado" };
+    }
+    return { status: 200, data: getProduct };
+};
+exports.ProductByIdServices = ProductByIdServices;
 const addProduct = async (param) => {
     const existingProduct = await Produtos_models_1.default.findOne({
         where: { productName: param.productName },
@@ -42,35 +53,37 @@ const addProduct = async (param) => {
         return { status: 409, data: null, message: "Produto já existe." };
     }
     let category = await Categoria_models_1.default.findOne({
-        where: { categName: param.categoria },
+        where: { categName: param.categories },
     });
     if (!category) {
         category = await Categoria_models_1.default.create({
-            categName: param.categoria,
+            categName: param.categories,
         });
     }
-    let marca = await Marcas_models_1.default.findOne({ where: { brandName: param.marca } });
+    let marca = await Marcas_models_1.default.findOne({ where: { brandName: param.brands } });
     if (!marca) {
         marca = await Marcas_models_1.default.create({
-            brandName: param.marca,
+            brandName: param.brands,
         });
     }
-    let cor = await Cores_models_1.default.findOne({ where: { colorName: param.cor } });
+    let cor = await Cores_models_1.default.findOne({ where: { colorName: param.colors } });
     if (!cor) {
         cor = await Cores_models_1.default.create({
-            colorName: param.cor,
-            quantity: 40,
+            colorName: param.colors,
         });
     }
     const product = await Produtos_models_1.default.create({
         productName: param.productName,
-        descricao: param.descricao,
-        preco: param.preco,
-        promo: param.promo || "",
-        genero: param.genero,
-        categoriasId: category.id,
-        marcasId: marca.id,
-        coresId: cor.id,
+        description: param.description,
+        price: param.price,
+        promo: param.promo || 0,
+        gender: param.gender,
+        categoriesId: category.id,
+        brandsId: marca.id,
+        colorsId: cor.id,
+        images: param.images,
+        thumbnail: param.thumbnail,
+        quantity: param.quantity,
     });
     return { status: 201, data: product };
 };

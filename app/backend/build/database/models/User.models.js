@@ -34,6 +34,18 @@ Users.init({
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },
+    endereco: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    },
+    cep: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    },
+    telefone: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    }
 }, {
     sequelize: _1.default,
     modelName: "users",

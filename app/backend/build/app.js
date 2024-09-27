@@ -7,10 +7,11 @@ exports.app = exports.App = void 0;
 const express_1 = __importDefault(require("express"));
 require("express-async-errors");
 const errorMiddleware_1 = __importDefault(require("./middleware/errorMiddleware"));
-const users_controller_1 = require("./controllers/users.controller");
-const erroLogin_middleware_1 = require("./middleware/erroLogin,middleware");
-const Prodcuts_controller_1 = require("./controllers/Prodcuts.controller");
 const dotenv_1 = __importDefault(require("dotenv"));
+const user_router_1 = __importDefault(require("./router/user.router"));
+const product_router_1 = __importDefault(require("./router/product.router"));
+const carrinho_router_1 = __importDefault(require("./router/carrinho.router"));
+const orders_router_1 = __importDefault(require("./router/orders.router"));
 dotenv_1.default.config();
 class App {
     constructor() {
@@ -19,13 +20,13 @@ class App {
         // Não remover essa rota
         this.app.get("/", (req, res) => res.json({ ok: true }));
         // Login
-        this.app.get("/login", users_controller_1.getUser);
-        this.app.post("/login", erroLogin_middleware_1.erroLogin, users_controller_1.Login);
-        this.app.put("/login", erroLogin_middleware_1.erroCreateUser, users_controller_1.registreUsers);
+        this.app.use(user_router_1.default);
         //  Produtos
-        this.app.get("/products", Prodcuts_controller_1.AllProducts);
-        this.app.post("/products", Prodcuts_controller_1.createProduct);
-        this.app.put("/products/:id", Prodcuts_controller_1.upProduct);
+        this.app.use(product_router_1.default);
+        // Carrinho
+        this.app.use(carrinho_router_1.default);
+        // Pedidos
+        this.app.use(orders_router_1.default);
         // Não remova esse middleware de erro, mas fique a vontade para customizá-lo
         // Mantenha ele sempre como o último middleware a ser chamado
         this.app.use(errorMiddleware_1.default);

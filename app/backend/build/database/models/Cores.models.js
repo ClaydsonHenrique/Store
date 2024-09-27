@@ -18,10 +18,6 @@ ProductsColor.init({
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },
-    quantity: {
-        type: sequelize_1.DataTypes.INTEGER,
-        allowNull: false,
-    },
 }, {
     sequelize: _1.default,
     tableName: "ProductsColor",

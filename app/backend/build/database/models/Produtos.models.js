@@ -21,11 +21,11 @@ Products.init({
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },
-    descricao: {
-        type: sequelize_1.DataTypes.STRING,
+    description: {
+        type: sequelize_1.DataTypes.TEXT,
         allowNull: false,
     },
-    preco: {
+    price: {
         type: sequelize_1.DataTypes.DECIMAL(10, 2),
         allowNull: false,
     },
@@ -33,21 +33,33 @@ Products.init({
         type: sequelize_1.DataTypes.DECIMAL(10, 2),
         allowNull: true,
     },
-    genero: {
+    quantity: {
+        type: sequelize_1.DataTypes.INTEGER,
+        allowNull: true,
+    },
+    gender: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },
-    coresId: {
+    colorsId: {
         type: sequelize_1.DataTypes.INTEGER,
         allowNull: false,
     },
-    categoriasId: {
+    categoriesId: {
         type: sequelize_1.DataTypes.INTEGER,
         allowNull: false,
     },
-    marcasId: {
+    brandsId: {
         type: sequelize_1.DataTypes.INTEGER,
         allowNull: false,
+    },
+    thumbnail: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: true,
+    },
+    images: {
+        type: sequelize_1.DataTypes.JSON,
+        allowNull: true,
     },
 }, {
     sequelize: _1.default,
@@ -56,15 +68,18 @@ Products.init({
 });
 // cor
 Products.belongsTo(Cores_models_1.default, {
-    foreignKey: "coresId",
+    foreignKey: "colorsId",
     as: "color",
 });
-Cores_models_1.default.hasMany(Products, { foreignKey: "coresId" });
+Cores_models_1.default.hasMany(Products, { foreignKey: "colorsId" });
 // marca
-Marcas_models_1.default.hasMany(Products, { foreignKey: "marcasId" });
-Products.belongsTo(Marcas_models_1.default, { foreignKey: "marcasId", as: "marca" });
+Marcas_models_1.default.hasMany(Products, { foreignKey: "brandsId" });
+Products.belongsTo(Marcas_models_1.default, { foreignKey: "brandsId", as: "marca" });
 // categoria
-Categoria_models_1.default.hasMany(Products, { foreignKey: "categoriasId" });
-Products.belongsTo(Categoria_models_1.default, { foreignKey: "categoriasId", as: "categoria" });
+Categoria_models_1.default.hasMany(Products, { foreignKey: "categoriesId" });
+Products.belongsTo(Categoria_models_1.default, {
+    foreignKey: "categoriesId",
+    as: "categoria",
+});
 exports.default = Products;
 //# sourceMappingURL=Produtos.models.js.map

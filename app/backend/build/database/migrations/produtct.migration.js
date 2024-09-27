@@ -14,11 +14,11 @@ exports.default = {
                 type: sequelize_1.DataTypes.STRING,
                 allowNull: false,
             },
-            descricao: {
-                type: sequelize_1.DataTypes.STRING,
+            description: {
+                type: sequelize_1.DataTypes.TEXT,
                 allowNull: false,
             },
-            preco: {
+            price: {
                 type: sequelize_1.DataTypes.DECIMAL(10, 2),
                 allowNull: false,
             },
@@ -26,21 +26,33 @@ exports.default = {
                 type: sequelize_1.DataTypes.DECIMAL(10, 2),
                 allowNull: true,
             },
-            genero: {
+            quantity: {
+                type: sequelize_1.DataTypes.INTEGER,
+                allowNull: true,
+            },
+            gender: {
                 type: sequelize_1.DataTypes.STRING,
                 allowNull: false,
             },
-            coresId: {
+            colorsId: {
                 type: sequelize_1.DataTypes.INTEGER,
                 allowNull: false,
             },
-            categoriasId: {
+            categoriesId: {
                 type: sequelize_1.DataTypes.INTEGER,
                 allowNull: false,
             },
-            marcasId: {
+            brandsId: {
                 type: sequelize_1.DataTypes.INTEGER,
                 allowNull: false,
+            },
+            thumbnail: {
+                type: sequelize_1.DataTypes.STRING,
+                allowNull: true,
+            },
+            images: {
+                type: sequelize_1.DataTypes.JSON,
+                allowNull: true,
             },
         });
     },

@@ -4,7 +4,19 @@ exports.default = {
     up: async (queryInterface) => {
         await queryInterface.bulkInsert("categorias", [
             {
-                categName: "",
+                categName: "Lifestyle",
+            },
+            {
+                categName: "Skate",
+            },
+            {
+                categName: "Futebol",
+            },
+            {
+                categName: "Corrida",
+            },
+            {
+                categName: "Basquete",
             },
         ], {});
     },

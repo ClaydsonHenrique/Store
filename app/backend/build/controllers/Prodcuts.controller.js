@@ -1,23 +1,32 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.upProduct = exports.createProduct = exports.AllProducts = void 0;
+exports.ProductById = exports.upProduct = exports.createProduct = exports.AllProducts = void 0;
 const Products_services_1 = require("../services/Products.services");
 const AllProducts = async (req, res) => {
     const products = await (0, Products_services_1.getAllProducts)();
     res.status(products.status).json(products.data);
 };
 exports.AllProducts = AllProducts;
+const ProductById = async (req, res) => {
+    const { id } = req.params;
+    const restultProductById = await (0, Products_services_1.ProductByIdServices)(Number(id));
+    res.status(restultProductById.status).json(restultProductById.data);
+};
+exports.ProductById = ProductById;
 const createProduct = async (req, res) => {
-    const { productName, descricao, preco, genero, promo, categoria, marca, cor, } = req.body;
+    const { productName, description, price, gender, promo, categories, brands, colors, images, thumbnail, quantity, } = req.body;
     const productId = await (0, Products_services_1.addProduct)({
         productName,
-        descricao,
-        preco,
-        genero,
+        description,
+        price,
+        gender,
         promo: promo || "",
-        categoria,
-        marca,
-        cor,
+        categories,
+        brands,
+        colors,
+        images,
+        thumbnail,
+        quantity,
     });
     res.status(201).json(productId);
 };

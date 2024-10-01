@@ -13,7 +13,6 @@ function ProductDetails({ token }) {
   const [quantity, setQuantity] = useState(0);
   const navigate = useNavigate();
 
-
   const fetchProduct = async () => {
     try {
       const FetchApi = await getById('product', id)
@@ -68,7 +67,7 @@ function ProductDetails({ token }) {
       {!loading ? <Loading ></Loading> :
         <section>
           <ul>
-            <li><Link to='/signUp' > signUp</Link></li>
+            <li><Link to='/register' > signUp</Link></li>
             <li><Link to='/login' > login</Link></li>
             <li><Link to='/product' > Produtos</Link></li>
             <li><Link to='/shoppingCart' > Shopping Cart</Link></li>

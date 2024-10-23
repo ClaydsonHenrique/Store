@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import { MethodGet } from '../FetchApi/ApiProducts'
 import { useEffect, useState } from 'react'
-import Loading from './Loading'
-import '../style/Product.css'
 
 function Products() {
 
@@ -13,6 +11,7 @@ function Products() {
     setProducts(allProducts)
     setLoading(true)
   }
+  console.log(products)
   useEffect(() => {
     getAllProducts()
   }, [])
@@ -23,7 +22,7 @@ function Products() {
         return (
           <div className="card" key={product.id}>
             <div className="card-body">
-              <h5 className="card-title">{product.name}</h5>
+              <h2 className="card-title">{product.productName}</h2>
               <img src={product.images[0]} alt={product} className='thumbnail'/>
               {product.promo !== '0.00' ?
                 <div>
@@ -40,15 +39,7 @@ function Products() {
   }
   return (
     <main>
-      {!loading ? <Loading /> :
         <section>
-          <nav>
-            <ul>
-              <li><Link to='/login'>login</Link></li>
-              <li><Link to='/register'>signUp</Link></li>
-              <li><Link to='/shoppingCart'>Shopping Cart</Link></li>
-            </ul>
-          </nav>
           <div>Escolha seus Produtos </div>
           <div className="container">
             <div className="row">
@@ -56,7 +47,6 @@ function Products() {
             </div>
           </div>
         </section>
-      }
     </main>
   )
 }

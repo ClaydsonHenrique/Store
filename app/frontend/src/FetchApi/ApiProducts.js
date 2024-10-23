@@ -1,3 +1,21 @@
+export const getUser = async (token) => {
+  try {
+    const response = await fetch(`http://localhost:3003/login`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
+    })
+    const data = await response.json();
+    return data;
+    
+  }catch (error) {
+    throw error;
+  }
+}
+
+
+
 export const MethodGet = async () => {
   try {
     const response = await fetch('http://localhost:3003/product')
@@ -84,6 +102,24 @@ export const add_Produc_ShoppingCart = async (token, product, quantity) => {
     return data;
   } catch (error) {
     console.log(error);
+    throw error;
+  }
+}
+
+
+export const validateToken = async (token) => {
+  try {
+    const response = await fetch(`http://localhost:3003/verifyToken`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
+    })
+    const data = await response.json();
+    console.log(data)
+    return data;
+
+  } catch (error) {
     throw error;
   }
 }

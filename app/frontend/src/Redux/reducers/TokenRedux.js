@@ -1,7 +1,8 @@
-import { ADD_TOKEN } from '../actions/index.js';
+import { ADD_TOKEN, ADD_LOGIN } from '../actions/index.js';
 
 const INITIAL_STATE = {
   token: '',
+  login:'',
 }
 
 const tokenReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,11 @@ const tokenReducer = (state = INITIAL_STATE, action) => {
       return{
         ...state,
         token: action.payload,
+      };
+    case ADD_LOGIN:
+      return {
+        ...state,
+        login: action.payload,
       }
       default:
         return state;

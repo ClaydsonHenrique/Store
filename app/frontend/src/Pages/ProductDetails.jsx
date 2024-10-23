@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { add_Produc_ShoppingCart, getById } from '../FetchApi/ApiProducts';
-import '../style/ProductDetails.css'
-import Loading from './Loading';
 import { connect } from 'react-redux';
 
 
@@ -64,14 +62,7 @@ function ProductDetails({ token }) {
 
   return (
     <main>
-      {!loading ? <Loading ></Loading> :
         <section>
-          <ul>
-            <li><Link to='/register' > signUp</Link></li>
-            <li><Link to='/login' > login</Link></li>
-            <li><Link to='/product' > Produtos</Link></li>
-            <li><Link to='/shoppingCart' > Shopping Cart</Link></li>
-          </ul>
           <section className='container'>
             <div>
               {product.images && <img src={product.images[0]} alt={product.productName} className='renderImage' />}
@@ -95,7 +86,6 @@ function ProductDetails({ token }) {
             <p className='description'>{product.description}</p>
           </section>
         </section>
-      }
     </main>
   )
 }

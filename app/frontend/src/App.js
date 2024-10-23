@@ -1,25 +1,35 @@
 import React from "react";
+import { connect } from 'react-redux';
 import Login from './Pages/Login.jsx';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Products from './Pages/Products.jsx';
-import SingUp from './Pages/SingUp.jsx';
 import ShoppingCart from './Pages/ShoppingCart.jsx';
 import ProductDetails from './Pages/ProductDetails.jsx';
+import Headers from './Pages/Headers.jsx';
+import Footer from './Pages/Footer.jsx';
+import PageNotFound from './Pages/PageNotFound.jsx';
 
-
-
-function App() {
-
+function App({login}) {
+  if (login === true) <Navigate to="/" />
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path='/product' element={<Products/>} />
-      <Route path='/product/:id' element={<ProductDetails/>}/>
-      <Route path='/login' element={<Login/>} />
-      <Route path='/register' element={<SingUp />} />
-      <Route path='/shoppingCart' element={<ShoppingCart/>}/>
-    </Routes>
+    <main className='container_app'>
+      <Headers />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path='/' element={<Products />} />
+        <Route path='/product/:id' element={<ProductDetails />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/shoppingCart' element={<ShoppingCart />} />
+        <Route path='*' element ={<PageNotFound />} />
+      </Routes>
+      <Footer />
+    </main>
+
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  login: state.token.login,
+});
+
+export default connect(mapStateToProps)(App);

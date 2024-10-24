@@ -1,6 +1,8 @@
+import { IProducts } from "./../Interfaces/IProduct";
 import {
   getProductsInCartService,
   addProductToCartService,
+  updatequantityProductCar,
 } from "../services/Carrinho.services";
 import { Request, Response } from "express";
 
@@ -31,4 +33,17 @@ const addProductToCart = async (req: Request, res: Response) => {
   res.status(status).json(data);
 };
 
-export { getProductFromCart, addProductToCart };
+const updateCar =async (req: Request, res: Response) => {
+  const { quantidade, IProduct } = req.body;
+  if(!quantidade || !IProduct ) {
+    return res
+      .status(400)
+      .json({
+        message: `Quantidade and IProduct are required ${quantidade}  ${IProduct}`,
+      });
+  }
+  const {status, data} =await updatequantityProductCar(quantidade, IProduct);
+  return res.status(status).json(data);
+};
+
+export { getProductFromCart, addProductToCart, updateCar };

@@ -7,7 +7,7 @@ export default {
         id: 1,
         idProduct: 1,
         userId: 1,
-        quantidade:4,
+        quantidade:0,
       },
     ]);
   },

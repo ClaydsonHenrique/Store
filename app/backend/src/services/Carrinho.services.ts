@@ -1,7 +1,7 @@
-import { Model } from 'sequelize';
 import Carrinho from "../database/models/ShoppingCart.models";
 import { verifyToken } from "../utils/token.utils";
-import Products from '../database/models/Produtos.models';
+import Products from "../database/models/Produtos.models";
+import Users from '../database/models/User.models';
 
 const getProductsInCartService = async (token: string) => {
   const tokenId = verifyToken(token);
@@ -10,10 +10,12 @@ const getProductsInCartService = async (token: string) => {
   }
   const { id } = tokenId;
   const carrinho = await Carrinho.findAll({
+    where: { userId: id },
     include: [
       {
         model: Products,
-        as: "product", 
+        as: "product",
+        attributes: ["productName", "price", "images"],
       },
     ],
   });
@@ -29,7 +31,7 @@ const addProductToCartService = async (
   if (!tokenId) {
     throw new Error("Invalid token");
   }
-  
+
   const { id } = tokenId;
   const createCar = await Carrinho.create({
     userId: id,
@@ -40,4 +42,21 @@ const addProductToCartService = async (
   return { status: 201, data: createCar };
 };
 
-export { getProductsInCartService, addProductToCartService };
+const updatequantityProductCar = async (
+  quantidade: number,
+  idProduct: number
+) => {
+  const carItem = await Carrinho.findOne({ where: { idProduct } });
+  if (!carItem) {
+    return { status: 201, data: { message: "item não encontrado" } };
+  }
+  const updateCar = await carItem.update({ quantidade });
+  return {status:201,data: updateCar}
+};
+
+
+export {
+  getProductsInCartService,
+  addProductToCartService,
+  updatequantityProductCar,
+};

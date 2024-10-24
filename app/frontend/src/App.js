@@ -8,6 +8,7 @@ import ProductDetails from './Pages/ProductDetails.jsx';
 import Headers from './Pages/Headers.jsx';
 import Footer from './Pages/Footer.jsx';
 import PageNotFound from './Pages/PageNotFound.jsx';
+import Carrinho from './Pages/Carrinho.jsx';
 
 function App({login}) {
   if (login === true) <Navigate to="/" />
@@ -20,6 +21,7 @@ function App({login}) {
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/login' element={<Login />} />
         <Route path='/shoppingCart' element={<ShoppingCart />} />
+        <Route path='/carrinho' element={<Carrinho />} />
         <Route path='*' element ={<PageNotFound />} />
       </Routes>
       <Footer />

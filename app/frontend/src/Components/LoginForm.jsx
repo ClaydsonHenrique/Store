@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import useForm from '../Hooks/useForm'
 import Input from './Input'
 import { addDataUser, addLogin, addToken } from '../Redux/actions'
-import { getUser, MethodPost } from '../FetchApi/ApiProducts'
+import { getMethodIfToken, MethodPost } from '../FetchApi/ApiProducts'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
@@ -25,7 +25,7 @@ export default function LoginForm() {
         setError(response.message)
       }
       const token = await response.token
-      const dataUser = await getUser(token)
+      const dataUser = await getMethodIfToken(token, 'login')
       
       dispatch(addToken(token))
       dispatch(addLogin(true))
@@ -40,7 +40,7 @@ export default function LoginForm() {
   const autoLogin = React.useCallback(async () => {
     const token = window.localStorage.getItem('token')
     if (token) {
-      const dataUser = await getUser(token)
+      const dataUser = await getMethodIfToken(token, 'login')
       if (!dataUser.message) {
         dispatch(addDataUser(dataUser))
         dispatch(addLogin(true))

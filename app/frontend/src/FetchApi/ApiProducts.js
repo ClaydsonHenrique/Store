@@ -1,6 +1,6 @@
-export const getUser = async (token) => {
+export const getMethodIfToken = async (token, router) => {
   try {
-    const response = await fetch(`http://localhost:3003/login`, {
+    const response = await fetch(`http://localhost:3003/${router}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -13,6 +13,27 @@ export const getUser = async (token) => {
     throw error;
   }
 }
+
+export const updateCar = async (values) => {
+  try {
+    const response = await fetch(`http://localhost:3003/carrinho`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    })
+    if (!response) {
+      throw new Error('Network response was not ok')
+    }
+    const data = await response.json()
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
 
 
 
@@ -106,20 +127,3 @@ export const add_Produc_ShoppingCart = async (token, product, quantity) => {
   }
 }
 
-
-export const validateToken = async (token) => {
-  try {
-    const response = await fetch(`http://localhost:3003/verifyToken`, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      },
-    })
-    const data = await response.json();
-    console.log(data)
-    return data;
-
-  } catch (error) {
-    throw error;
-  }
-}

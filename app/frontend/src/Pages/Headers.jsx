@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { addDataUser } from '../Redux/actions';
-import { getUser } from '../FetchApi/ApiProducts';
+import { getMethodIfToken } from '../FetchApi/ApiProducts';
 
 function Headers({ dataUser }) {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function Headers({ dataUser }) {
   const getLocalUser = React.useCallback( async() => {
     const token = window.localStorage.getItem('token');
     if(!token) return false;
-    const getusuario = await getUser(token);
+    const getusuario = await getMethodIfToken(token, 'login');
     dispatch(addDataUser(getusuario));
     return getusuario;
   },[dispatch]);
@@ -34,7 +34,7 @@ function Headers({ dataUser }) {
             <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to='/'>Carrinho</Link>
+            <Link to='/carrinho'>Carrinho</Link>
           </li>
           <li>
             {

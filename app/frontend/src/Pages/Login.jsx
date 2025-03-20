@@ -1,16 +1,7 @@
-import React from 'react';
-import LoginForm from '../Components/LoginForm.jsx';
-import CreatUser from '../Components/CreatUser.jsx';
+import React from 'react'
 
-function Login() {
+export default function Login() {
   return (
-    <main className='Container-Login'>
-      <LoginForm/>
-      <CreatUser />
-    </main>
+    <div>Login</div>
   )
 }
-
-
-
-export default Login;

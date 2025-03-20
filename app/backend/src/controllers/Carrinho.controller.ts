@@ -34,15 +34,19 @@ const addProductToCart = async (req: Request, res: Response) => {
 };
 
 const updateCar =async (req: Request, res: Response) => {
-  const { quantidade, IProduct } = req.body;
-  if(!quantidade || !IProduct ) {
+  const { IProduct, operador, number } = req.body;
+  if(!IProduct ) {
     return res
       .status(400)
       .json({
-        message: `Quantidade and IProduct are required ${quantidade}  ${IProduct}`,
+        message: `IProduct are required  ${IProduct}`,
       });
   }
-  const {status, data} =await updatequantityProductCar(quantidade, IProduct);
+  const { status, data } = await updatequantityProductCar(
+    IProduct,
+    operador,
+    number
+  );
   return res.status(status).json(data);
 };
 

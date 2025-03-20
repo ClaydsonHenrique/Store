@@ -1151,7 +1151,7 @@ export default {
 
           Conta com a qualidade da marca em todos seus detalhes e o tênis Stream é ideal.
 
-          O seu cabedal é sintético, a entressola é em EVA e o solado é leve com cortes para flexibilidade.
+          O seu cabeQuantidadedal é sintético, a entressola é em EVA e o solado é leve com cortes para flexibilidade.
 
           Já sua lingueta é integrada, a palmilha é removível e tem forro acolchoado.
 

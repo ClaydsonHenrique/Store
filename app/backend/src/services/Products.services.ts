@@ -26,19 +26,60 @@ const getAllProducts = async () => {
       exclude: ["colorsId", "categoriesId", "brandsId"],
     },
   });
+  
+  
+const formattedProducts = allProducts.map((product: any) => ({
+  ...product.toJSON(),
+  categoria: product.categoria?.categName,
+  marca: product.marca?.brandName,
+  color: product.color?.colorName,
+}));
 
-  return { status: 200, data: allProducts };
+  return { status: 200, data: formattedProducts };
 };
 
 const ProductByIdServices = async (id: number) => {
   if(!id) {
     return { status: 400, message: "Id is required" }
   }
-  const getProduct = await Products.findByPk(id);
+  const getProduct = await Products.findByPk(id, {
+    include: [
+      {
+        model: Categorias,
+        as: "categoria",
+        attributes: ["categName"],
+      },
+      {
+        model: Marcas,
+        as: "marca",
+        attributes: ["brandName"],
+      },
+      {
+        model: Cores,
+        as: "color",
+        attributes: ["colorName"],
+      },
+    ],
+    attributes: {
+      exclude: ["colorsId", "categoriesId", "brandsId"],
+    },
+  });
+  
   if(!getProduct) {
     return { status: 404, data: "Produto não encontrado" };
   }
-  return { status: 200, data: getProduct}
+  
+ const { marca, categoria, color, ...rest } = getProduct.toJSON() as any;
+
+  
+  const data = {
+    ...rest, 
+    brandName: marca?.brandName,
+    catgName: categoria?.categName,
+    colorName: color?.colorName,
+  }
+  
+  return { status: 200, data: data };
 };
 
 interface IaddProduct {

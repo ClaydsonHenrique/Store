@@ -1,3 +1,4 @@
+
 "use strict";
 import { Model, QueryInterface, DataTypes } from "sequelize";
 import { ICateg } from "../../Interfaces/ICateg";

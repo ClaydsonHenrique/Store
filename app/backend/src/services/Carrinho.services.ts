@@ -1,7 +1,7 @@
 import Carrinho from "../database/models/ShoppingCart.models";
 import { verifyToken } from "../utils/token.utils";
 import Products from "../database/models/Produtos.models";
-import Users from '../database/models/User.models';
+import Users from "../database/models/User.models";
 
 const getProductsInCartService = async (token: string) => {
   const tokenId = verifyToken(token);
@@ -42,18 +42,40 @@ const addProductToCartService = async (
   return { status: 201, data: createCar };
 };
 
+const removeItemCar = async (idProduct: number) => {
+  await Carrinho.destroy({ where: { idProduct } });
+  return { status: 201, data: { message: "item removido" } };
+};
+
 const updatequantityProductCar = async (
-  quantidade: number,
-  idProduct: number
+  idProduct: number,
+  operador: boolean,
+  number: number
 ) => {
   const carItem = await Carrinho.findOne({ where: { idProduct } });
+
   if (!carItem) {
     return { status: 201, data: { message: "item não encontrado" } };
   }
-  const updateCar = await carItem.update({ quantidade });
-  return {status:201,data: updateCar}
-};
 
+  if (!operador && carItem.quantidade <= 0) {
+    removeItemCar(idProduct);
+    return { status: 401, data: { message: "Produto vazio" } };
+  }
+
+  let updateCar;
+  if (!operador) {
+     updateCar = await carItem.update({
+      quantidade: carItem.quantidade - number,
+    });
+  }
+  updateCar = await carItem.update({
+    quantidade: carItem.quantidade + number,
+  });
+    
+
+  return { status: 201, data: updateCar };
+};
 
 export {
   getProductsInCartService,

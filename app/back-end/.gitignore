@@ -1,0 +1,4 @@
+node_modules.tar.gz
+/node_modules
+/build
+.env

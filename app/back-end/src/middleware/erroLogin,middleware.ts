@@ -17,7 +17,7 @@ const erroCreateUser = async (
   const { email, name, lastname, password } = req.body;
   
   if (!email || !name || !lastname || !password) {
-    return res.status(400).json({message: "All fields are necessary."});
+    return res.status(400).json({message: "fields are necessary."});
   }
   
   const username = `${name} ${lastname}`;

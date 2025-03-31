@@ -2,7 +2,8 @@ import express from "express";
 import "express-async-errors";
 import dotenv from "dotenv";
 
-import Userrouter from './routers/user.routes'
+import UserRouter from "./routers/user.routes";
+import ProductRouter from "./routers/products.routes";
 
 dotenv.config();
 
@@ -14,9 +15,10 @@ class App {
 
     this.config();
     this.app.get("/", (req, res) => res.json({ ok: true }));
-    
-    this.app.use(Userrouter);
 
+    this.app.use(UserRouter);
+
+    this.app.use(ProductRouter);
   }
 
   private config(): void {

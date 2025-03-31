@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken';
 const secret = process.env.JWT_SECRET || 'vingador mais forte';
 
 type TokenPayload = {
-  id:number;
+  id: number;
   email: string;
   role: string;
 };

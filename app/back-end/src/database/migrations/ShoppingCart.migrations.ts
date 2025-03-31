@@ -18,7 +18,7 @@ export default {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      quantidade: {
+      quantity: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },

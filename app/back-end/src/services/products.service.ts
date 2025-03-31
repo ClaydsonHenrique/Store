@@ -1,7 +1,7 @@
-import Products from "../database/models/Produtos.models";
-import Categorias from "../database/models/Categoria.models";
-import Marcas from "../database/models/Marcas.models";
-import Cores from "../database/models/Cores.models";
+import Products from "../database/models/Products.models";
+import Categorias from "../database/models/Categories.models";
+import Marcas from "../database/models/Brands.models";
+import Cores from "../database/models/Colors.models";
 
 const getAllProducts = async () => {
   const allProducts = await Products.findAll({

@@ -5,9 +5,9 @@ import {
   InferCreationAttributes,
   CreationOptional,
 } from "sequelize";
-import ProductsColor from "./Cores.models";
-import MarcaModel from "./Marcas.models";
-import CartegModel from "./Categoria.models";
+import ProductsColor from "./Colors.models";
+import MarcaModel from "./Brands.models";
+import CartegModel from "./Categories.models";
 import db from ".";
 
 class Products extends Model<

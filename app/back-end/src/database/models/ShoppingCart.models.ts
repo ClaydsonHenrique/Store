@@ -6,7 +6,7 @@ import {
   CreationOptional,
 } from "sequelize";
 import db from ".";
-import Products from './Produtos.models';
+import Products from './Products.models';
 import Users from './User.models';
 
 class ShoppingCart extends Model<
@@ -16,7 +16,7 @@ class ShoppingCart extends Model<
   declare id: CreationOptional<number>;
   declare idProduct: number;
   declare userId: number;
-  declare quantidade: number;
+  declare quantity: number;
 }
 
 ShoppingCart.init(
@@ -43,7 +43,7 @@ ShoppingCart.init(
         key: "id",
       },
     },
-    quantidade: {
+    quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

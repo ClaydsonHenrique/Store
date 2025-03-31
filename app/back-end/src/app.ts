@@ -2,6 +2,8 @@ import express from "express";
 import "express-async-errors";
 import dotenv from "dotenv";
 
+import Userrouter from './routers/user.routes'
+
 dotenv.config();
 
 class App {
@@ -12,6 +14,8 @@ class App {
 
     this.config();
     this.app.get("/", (req, res) => res.json({ ok: true }));
+    
+    this.app.use(Userrouter);
 
   }
 

@@ -38,9 +38,9 @@ const formattedProducts = allProducts.map((product: any) => ({
   return { status: 200, data: formattedProducts };
 };
 
-const ProductByIdServices = async (id: number) => {
-  if(!id) {
-    return { status: 400, message: "Id is required" }
+const ProductByIdServices = async (id?: number) => {
+  if(!id || id <= 0) {
+    return { status: 400, data: { message: "Id is required" } };
   }
   const getProduct = await Products.findByPk(id, {
     include: [
@@ -66,7 +66,7 @@ const ProductByIdServices = async (id: number) => {
   });
   
   if(!getProduct) {
-    return { status: 404, data: "Produto não encontrado" };
+    return { status: 404, data: { message: "Produto não encontrado" } };
   }
   
  const { marca, categoria, color, ...rest } = getProduct.toJSON() as any;
@@ -74,9 +74,9 @@ const ProductByIdServices = async (id: number) => {
   
   const data = {
     ...rest, 
-    brandName: marca?.brandName,
-    catgName: categoria?.categName,
-    colorName: color?.colorName,
+    marca: marca?.brandName,
+    categoria: categoria?.categName,
+    color: color?.colorName,
   }
   
   return { status: 200, data: data };
@@ -186,4 +186,4 @@ const updateProduct = async (
   }
 };
 
-export { getAllProducts, addProduct, updateProduct, ProductByIdServices };
+export default { getAllProducts, addProduct, updateProduct, ProductByIdServices };

@@ -7,6 +7,14 @@ const SALT_ROUNDS = process.env.BCRYPT_SALT_ROUNDS || 10;
 
 const login = async (user: Ilogin) => {
   const { email, password } = user;
+  
+  if(!email || !password) {
+     return {
+       status: 401,
+       data: { message: "Email and Password are required" },
+     };
+  }
+  
   const verifyLogin = await UserModels.findOne({ where: { email } });
   if (!verifyLogin || !verifyLogin.dataValues) {
     return { status: 401, data: { message: "Invalid email or password" } };
@@ -59,10 +67,6 @@ const updateUser = async (userUpdate: updateUser, token: string) => {
   return updateUser;
 };
 
-const getallUser = async () => {
-  const user = await UserModels.findAll();
-  return user;
-};
 
 const getUserLogin = async (token: string) => {
   const tokenPayload = verifyToken(token);
@@ -83,10 +87,9 @@ const validateToken = (token: string) => {
   return true;
 };
 
-export {
+export default {
   login,
   registerUser,
-  getallUser,
   updateUser,
   getUserLogin,
   validateToken,

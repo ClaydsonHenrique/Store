@@ -1,11 +1,17 @@
 {
-  "name": "store",
-  "version": "1.0.0",
-  "description": "## 🚀 Projeto Store",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+	"name": "store",
+	"version": "1.0.0",
+	"description": "## 🚀 Projeto Store",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"install:front": "cd ./app/frontend && npm install",
+		"install:back": "cd ./app/backend && npm install",
+		"install:apps": "npm run install:front && npm run install:back",
+		"compose:up": "cd app && docker-compose up -d --build",
+		"compose:down": "cd app && docker-compose down --remove-orphans",
+		"logs": "cd app && docker-compose logs -f"
+	},
+	"author": "",
+	"license": "ISC"
 }

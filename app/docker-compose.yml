@@ -3,24 +3,21 @@ version: "3.9"
 services:
   frontend:
     container_name: app_frontend
-    build: ./front-end
+    build: ./frontend
     ports:
       - 3000:3000
-    working_dir: /app_frontend
+    working_dir: /app-frontend
+    command: ["npm", "run", "dev" ]
     healthcheck:
-      test: ["CMD", "lsof", "-t", "i-3000"]
+      test: ["CMD", "lsof", "-t", "-i:3000"]
       timeout: 10s
       retries: 5
   backend:
     container_name: app_backend
-    build: ./back-end
+    build: ./backend
     ports:
       - 3003:3003
-    working_dir: /app_backend
-    
-    command: ["npm", "run","dev"]
-    volumes:
-      - ./backend/src:/app-backend/src
+    working_dir: /app-backend
     depends_on:
       db:
         condition: service_healthy
@@ -32,19 +29,19 @@ services:
       - DB_HOST=db
       - DB_PORT=3306
     healthcheck:
-      test: ["CMD", "lsof", "-t", "-i:3003"]
+      test: ["CMD", "lsof", "-t", "-i:3001"] 
       timeout: 10s
       retries: 5
   db:
     image: mysql:8.0.32
     container_name: db
     ports:
-      - 3306-3306
+      - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=123456
     restart: 'always'
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]        
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"] 
       timeout: 10s
       retries: 5
     cap_add:

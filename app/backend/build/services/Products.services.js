@@ -3,7 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductByIdServices = exports.updateProduct = exports.addProduct = exports.getAllProducts = void 0;
 const Produtos_models_1 = __importDefault(require("../database/models/Produtos.models"));
 const Categoria_models_1 = __importDefault(require("../database/models/Categoria.models"));
 const Marcas_models_1 = __importDefault(require("../database/models/Marcas.models"));
@@ -31,20 +30,55 @@ const getAllProducts = async () => {
             exclude: ["colorsId", "categoriesId", "brandsId"],
         },
     });
-    return { status: 200, data: allProducts };
+    const formattedProducts = allProducts.map((product) => {
+        var _a, _b, _c;
+        return ({
+            ...product.toJSON(),
+            categoria: (_a = product.categoria) === null || _a === void 0 ? void 0 : _a.categName,
+            marca: (_b = product.marca) === null || _b === void 0 ? void 0 : _b.brandName,
+            color: (_c = product.color) === null || _c === void 0 ? void 0 : _c.colorName,
+        });
+    });
+    return { status: 200, data: formattedProducts };
 };
-exports.getAllProducts = getAllProducts;
 const ProductByIdServices = async (id) => {
-    if (!id) {
-        return { status: 400, message: "Id is required" };
+    if (!id || id <= 0) {
+        return { status: 400, data: { message: "Id is required" } };
     }
-    const getProduct = await Produtos_models_1.default.findByPk(id);
+    const getProduct = await Produtos_models_1.default.findByPk(id, {
+        include: [
+            {
+                model: Categoria_models_1.default,
+                as: "categoria",
+                attributes: ["categName"],
+            },
+            {
+                model: Marcas_models_1.default,
+                as: "marca",
+                attributes: ["brandName"],
+            },
+            {
+                model: Cores_models_1.default,
+                as: "color",
+                attributes: ["colorName"],
+            },
+        ],
+        attributes: {
+            exclude: ["colorsId", "categoriesId", "brandsId"],
+        },
+    });
     if (!getProduct) {
-        return { status: 404, data: "Produto não encontrado" };
+        return { status: 404, data: { message: "Produto não encontrado" } };
     }
-    return { status: 200, data: getProduct };
+    const { marca, categoria, color, ...rest } = getProduct.toJSON();
+    const data = {
+        ...rest,
+        marca: marca === null || marca === void 0 ? void 0 : marca.brandName,
+        categoria: categoria === null || categoria === void 0 ? void 0 : categoria.categName,
+        color: color === null || color === void 0 ? void 0 : color.colorName,
+    };
+    return { status: 200, data: data };
 };
-exports.ProductByIdServices = ProductByIdServices;
 const addProduct = async (param) => {
     const existingProduct = await Produtos_models_1.default.findOne({
         where: { productName: param.productName },
@@ -87,7 +121,6 @@ const addProduct = async (param) => {
     });
     return { status: 201, data: product };
 };
-exports.addProduct = addProduct;
 const updateProduct = async (id, updateData) => {
     const product = await Produtos_models_1.default.findByPk(id);
     console.log(product);
@@ -108,5 +141,5 @@ const updateProduct = async (id, updateData) => {
         };
     }
 };
-exports.updateProduct = updateProduct;
+exports.default = { getAllProducts, addProduct, updateProduct, ProductByIdServices };
 //# sourceMappingURL=Products.services.js.map

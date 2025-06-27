@@ -26,26 +26,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateUser = exports.getallUser = exports.registerUser = exports.login = void 0;
 const bcrypt = __importStar(require("bcryptjs"));
 const User_models_1 = __importDefault(require("../database/models/User.models"));
 const token_utils_1 = require("../utils/token.utils");
 const SALT_ROUNDS = process.env.BCRYPT_SALT_ROUNDS || 10;
 const login = async (user) => {
     const { email, password } = user;
+    if (!email || !password) {
+        return {
+            status: 401,
+            data: { message: "Email and Password are required" },
+        };
+    }
     const verifyLogin = await User_models_1.default.findOne({ where: { email } });
     if (!verifyLogin || !verifyLogin.dataValues) {
-        return { status: 401, data: { message: 'Invalid email or password' } };
+        return { status: 401, data: { message: "Invalid email or password" } };
     }
     const verfifyPassword = await bcrypt.compare(password, verifyLogin.password);
     if (!verfifyPassword) {
-        return { status: 401, data: { message: 'Invalid email or password' } };
+        return { status: 401, data: { message: "Invalid email or password" } };
     }
     const { role, id } = verifyLogin;
     const token = (0, token_utils_1.sign)({ id, email, role });
     return { status: 200, data: { token } };
 };
-exports.login = login;
 const registerUser = async (userData) => {
     const { name, lastname, email, password, tumrbl, endereco, cep, telefone } = userData;
     const username = `${name} ${lastname}`;
@@ -62,7 +66,6 @@ const registerUser = async (userData) => {
     });
     return newUser;
 };
-exports.registerUser = registerUser;
 const updateUser = async (userUpdate, token) => {
     let { ...dataUpdate } = userUpdate;
     const tokenPayload = (0, token_utils_1.verifyToken)(token);
@@ -80,10 +83,30 @@ const updateUser = async (userUpdate, token) => {
     const updateUser = await User_models_1.default.update(dataUpdate, { where: { id } });
     return updateUser;
 };
-exports.updateUser = updateUser;
-const getallUser = async () => {
-    const user = await User_models_1.default.findAll();
-    return user;
+const getUserLogin = async (token) => {
+    const tokenPayload = (0, token_utils_1.verifyToken)(token);
+    if (!tokenPayload) {
+        return { status: 401, data: { message: "token invalido" } };
+    }
+    const { id } = tokenPayload;
+    const user = await User_models_1.default.findByPk(id, {
+        attributes: { exclude: ["password"] },
+    });
+    return { status: 200, data: user };
 };
-exports.getallUser = getallUser;
+const validateToken = (token) => {
+    if (token)
+        false;
+    const isToken = (0, token_utils_1.verifyToken)(token);
+    if (!isToken)
+        false;
+    return true;
+};
+exports.default = {
+    login,
+    registerUser,
+    updateUser,
+    getUserLogin,
+    validateToken,
+};
 //# sourceMappingURL=users.services.js.map

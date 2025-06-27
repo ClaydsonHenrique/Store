@@ -42,13 +42,6 @@ export default function Carrinho({ allProducts }) {
     return total + price * item.quantidade;
   }, 0);
 
-  const totalDiscount = cart.reduce((total, item) => {
-    const product = allProducts?.find((p) => p.id === item.id);
-    if (product && !isNaN(product.promo) && !isNaN(product.price)) {
-      return total + (Number(product.price) - Number(product.promo)) * item.quantidade;
-    }
-    return total;
-  }, 0);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -127,16 +120,11 @@ export default function Carrinho({ allProducts }) {
                   <span>Frete</span>
                   <span className="text-green-600">Grátis</span>
                 </div>
-                {totalDiscount > 0 && (
-                  <div className="flex justify-between text-red-600">
-                    <span>Desconto aplicado</span>
-                    <span>- R$ {totalDiscount}</span>
-                  </div>
-                )}
+
                 <div className="border-t pt-2 mt-2">
                   <div className="flex justify-between font-semibold">
                     <span>Total</span>
-                    <span>R$ {(totalPrice - totalDiscount)}</span>
+                    <span>R$ {totalPrice }</span>
                   </div>
                 </div>
               </div>

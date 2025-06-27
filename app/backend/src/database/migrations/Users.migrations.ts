@@ -1,6 +1,6 @@
 "use strict";
 import { Model, QueryInterface, DataTypes } from "sequelize";
-import { Users } from '../../Interfaces/IUsers';
+import { Users } from "../../Interfaces/IUsers";
 
 export default {
   up(queryInterface: QueryInterface) {

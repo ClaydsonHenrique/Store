@@ -6,6 +6,9 @@ import ProductDetails from "./Pages/ProductDetails";
 import Carrinho from "./Pages/Carrinho";
 import { GetAllProducts } from "./services/Api/Api";
 import Products from './Pages/Products';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import Footer from './Components/Footer';
 
 function App() {
   const [allProducts, setAllProducts] = React.useState([]);
@@ -30,7 +33,10 @@ function App() {
         <Route path="product/:id" element={<ProductDetails />} />
         <Route path="carrinho" element={<Carrinho allProducts={allProducts} />} />
         <Route path='/products' element={<Products allProducts={allProducts} />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
+      <Footer />
     </main>
   );
 }

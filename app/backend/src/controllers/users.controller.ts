@@ -48,16 +48,6 @@ const updateUserController = async (req: Request, res: Response) => {
   return res.status(200).json(serviceupdate);
 };
 
-const getUserLoginController = async (req: Request, res: Response) => {
-  const authorizationHeader = req.get("Authorization");
-  if (!authorizationHeader) {
-    return res.status(401).json({ message: "Token not found" });
-  }
-  const token = authorizationHeader.split(" ")[1];
-  const { status, data } = await loginService.getUserLogin(token);
-  return res.status(status).json(data);
-};
-
 const tokenValidate = (req: Request, res: Response) => {
   const authorizationHeader = req.get("Authorization");
   if (!authorizationHeader) return res.status(401).json({ message: "Token not found" });
@@ -68,8 +58,6 @@ const tokenValidate = (req: Request, res: Response) => {
 export {
   Login,
   registreUsers,
-  getUser,
   updateUserController,
-  getUserLoginController,
   tokenValidate,
 };

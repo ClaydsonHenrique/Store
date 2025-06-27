@@ -5,5 +5,6 @@ const Carrinho_controller_1 = require("../controllers/Carrinho.controller");
 const CarrinhoRouter = (0, express_1.Router)();
 CarrinhoRouter.get("/carrinho", Carrinho_controller_1.getProductFromCart);
 CarrinhoRouter.post("/carrinho", Carrinho_controller_1.addProductToCart);
+CarrinhoRouter.put("/carrinho", Carrinho_controller_1.updateCar);
 exports.default = CarrinhoRouter;
 //# sourceMappingURL=carrinho.router.js.map

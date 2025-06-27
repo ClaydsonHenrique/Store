@@ -50,7 +50,7 @@ export default function Header() {
                     <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">{totalItems}</span>}
                 </div>
               </Link>
-              <Link to='' >
+              <Link to='/login' >
                 <User className='h6 w-6 text-gray-600 cursor-pointer' />
               </Link>
             </div>

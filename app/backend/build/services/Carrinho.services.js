@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addProductToCartService = exports.getProductsInCartService = void 0;
+exports.updatequantityProductCar = exports.addProductToCartService = exports.getProductsInCartService = void 0;
 const ShoppingCart_models_1 = __importDefault(require("../database/models/ShoppingCart.models"));
 const token_utils_1 = require("../utils/token.utils");
 const Produtos_models_1 = __importDefault(require("../database/models/Produtos.models"));
@@ -14,10 +14,12 @@ const getProductsInCartService = async (token) => {
     }
     const { id } = tokenId;
     const carrinho = await ShoppingCart_models_1.default.findAll({
+        where: { userId: id },
         include: [
             {
                 model: Produtos_models_1.default,
                 as: "product",
+                attributes: ["productName", "price", "images"],
             },
         ],
     });
@@ -38,4 +40,29 @@ const addProductToCartService = async (token, product, quantidade) => {
     return { status: 201, data: createCar };
 };
 exports.addProductToCartService = addProductToCartService;
+const removeItemCar = async (idProduct) => {
+    await ShoppingCart_models_1.default.destroy({ where: { idProduct } });
+    return { status: 201, data: { message: "item removido" } };
+};
+const updatequantityProductCar = async (idProduct, operador, number) => {
+    const carItem = await ShoppingCart_models_1.default.findOne({ where: { idProduct } });
+    if (!carItem) {
+        return { status: 201, data: { message: "item não encontrado" } };
+    }
+    if (!operador && carItem.quantidade <= 0) {
+        removeItemCar(idProduct);
+        return { status: 401, data: { message: "Produto vazio" } };
+    }
+    let updateCar;
+    if (!operador) {
+        updateCar = await carItem.update({
+            quantidade: carItem.quantidade - number,
+        });
+    }
+    updateCar = await carItem.update({
+        quantidade: carItem.quantidade + number,
+    });
+    return { status: 201, data: updateCar };
+};
+exports.updatequantityProductCar = updatequantityProductCar;
 //# sourceMappingURL=Carrinho.services.js.map

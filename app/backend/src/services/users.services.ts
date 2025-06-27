@@ -68,18 +68,6 @@ const updateUser = async (userUpdate: updateUser, token: string) => {
 };
 
 
-const getUserLogin = async (token: string) => {
-  const tokenPayload = verifyToken(token);
-  if (!tokenPayload) {
-    return { status: 401, data: { message: "token invalido" } };
-  }
-  const { id } = tokenPayload;
-  const user = await UserModels.findByPk(id, {
-    attributes: { exclude: ["password"] },
-  });
-  return { status: 200, data: user };
-};
-
 const validateToken = (token: string) => {
   if (token) false;
   const isToken = verifyToken(token);
@@ -91,6 +79,5 @@ export default {
   login,
   registerUser,
   updateUser,
-  getUserLogin,
   validateToken,
 };

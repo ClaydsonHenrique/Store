@@ -1,10 +1,12 @@
 import React from 'react';
 import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import { Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useCart } from '../Hooks/useCart';
 
 export default function Products({ allProducts }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const { handleClickAddCar } = useCart();
 
   const [loading, setLoading] = React.useState(false);
   const { categorie, brand, color } = useParams();
@@ -288,7 +290,9 @@ export default function Products({ allProducts }) {
                           <p className="text-green-800">{product.promo}</p>
                         </>
                       )}
-                      <button className="w-full mt-4 bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">
+                      <button className="w-full mt-4 bg-black text-white py-2 rounded-md hover:bg-gray-800 transition"
+                        onClick={() => handleClickAddCar(product.id, 1)}
+                      >
                         Adicionar ao Carrinho
                       </button>
                     </div>

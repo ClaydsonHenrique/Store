@@ -3,18 +3,30 @@ import UserModels from "../database/models/User.models";
 import { Ilogin, createUser, updateUser } from "../Interfaces/IUsers";
 import { verifyToken, sign } from "../utils/token.utils";
 
+
+const getUserById = async (token: string) => {
+  const user = verifyToken(token);
+  if (!user) {
+    return { status: 401, data: { message: "Invalid token" } };
+  }
+  const getuser = await UserModels.findByPk(user.id,{
+    attributes: {exclude:['password']}
+  });
+  return { status: 200, data: getuser };
+};
+
 const SALT_ROUNDS = process.env.BCRYPT_SALT_ROUNDS || 10;
 
 const login = async (user: Ilogin) => {
   const { email, password } = user;
-  
-  if(!email || !password) {
-     return {
-       status: 401,
-       data: { message: "Email and Password are required" },
-     };
+
+  if (!email || !password) {
+    return {
+      status: 401,
+      data: { message: "Email and Password are required" },
+    };
   }
-  
+
   const verifyLogin = await UserModels.findOne({ where: { email } });
   if (!verifyLogin || !verifyLogin.dataValues) {
     return { status: 401, data: { message: "Invalid email or password" } };
@@ -23,8 +35,8 @@ const login = async (user: Ilogin) => {
   if (!verfifyPassword) {
     return { status: 401, data: { message: "Invalid email or password" } };
   }
-  const { role, id } = verifyLogin;
-  const token = sign({ id, email, role });
+  const { role, id, username } = verifyLogin;
+  const token = sign({ id, role, username });
   return { status: 200, data: { token } };
 };
 
@@ -67,7 +79,6 @@ const updateUser = async (userUpdate: updateUser, token: string) => {
   return updateUser;
 };
 
-
 const validateToken = (token: string) => {
   if (token) false;
   const isToken = verifyToken(token);
@@ -80,4 +91,5 @@ export default {
   registerUser,
   updateUser,
   validateToken,
+  getUserById,
 };

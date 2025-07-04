@@ -38,7 +38,13 @@ export default function Carrinho({ allProducts }) {
 
   const totalPrice = cart.reduce((total, item) => {
     const product = allProducts?.find((p) => p.id === item.id);
-    const price = product && !isNaN(product.promo) ? Number(product.promo) : (product && !isNaN(product.price) ? Number(product.price) : 0);
+    const promoVal = parseFloat(product?.promo);
+    const price =
+      product && promoVal > 0
+        ? promoVal
+        : product && !isNaN(product.price)
+          ? Number(product.price)
+          : 0;
     return total + price * item.quantidade;
   }, 0);
 
@@ -52,7 +58,15 @@ export default function Carrinho({ allProducts }) {
           {cart.length > 0 ? (
             cart.map((item) => {
               const product = allProducts?.find((p) => p.id === item.id);
-              const price = product && !isNaN(product.promo) ? Number(product.promo) : (product && !isNaN(product.price) ? Number(product.price) : 0);
+              const promoVal = parseFloat(product?.promo);
+              const price =
+                product && promoVal > 0
+                  ? promoVal
+                  : product && !isNaN(product.price)
+                    ? Number(product.price)
+                    : 0;
+
+              
               return (
                 <div
                   key={item.id}
@@ -92,7 +106,7 @@ export default function Carrinho({ allProducts }) {
                     </div>
                   </div>
                   <div className="text-right">
-                    {product && !isNaN(product.price) && product.promo ? (
+                    {product && !isNaN(product.price) && parseFloat(product.promo) > 0 ? (
                       <p className="text-sm text-gray-500 line-through">R$ {Number(product.price).toFixed(2)}</p>
                     ) : null}
                     <p className="text-lg font-semibold">

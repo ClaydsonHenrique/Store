@@ -1,13 +1,25 @@
 import loginService from "./../services/users.services";
 import { Request, Response } from "express";
 
+const getUser = async (req: Request, res: Response): Promise<void> => {
+  const authorizationHeader = req.get("Authorization");
+
+  if (!authorizationHeader) {
+    res.status(401).json({ message: "Invalid token" });
+    return;
+  }
+  const token = authorizationHeader.split(" ")[1];
+  const getUserById = await loginService.getUserById(token);
+
+  res.status(getUserById.status).json(getUserById.data);
+};
+
 const Login = async (req: Request, res: Response): Promise<void> => {
   const { email, password } = req.body;
   const userlogin = { email, password };
   const { status, data } = await loginService.login(userlogin);
   res.status(status).json(data);
 };
-
 
 // controller
 const registreUsers = async (req: Request, res: Response) => {
@@ -50,14 +62,10 @@ const updateUserController = async (req: Request, res: Response) => {
 
 const tokenValidate = (req: Request, res: Response) => {
   const authorizationHeader = req.get("Authorization");
-  if (!authorizationHeader) return res.status(401).json({ message: "Token not found" });
+  if (!authorizationHeader)
+    return res.status(401).json({ message: "Token not found" });
   const isTokenValid = loginService.validateToken(authorizationHeader);
-  return res.status(200).json(isTokenValid)
+  return res.status(200).json(isTokenValid);
 };
 
-export {
-  Login,
-  registreUsers,
-  updateUserController,
-  tokenValidate,
-};
+export { Login, registreUsers, updateUserController, tokenValidate, getUser };

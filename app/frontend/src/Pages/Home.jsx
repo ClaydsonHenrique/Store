@@ -75,14 +75,14 @@ export default function Home({ allProducts }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-2xl font-bold text-gray-800 mb-8">Categorias</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link to="/products?category=casual" className="relative h-64 rounded-lg overflow-hidden">
+            <Link to="/products?category=Corrida&price=2000" className="relative h-64 rounded-lg overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&q=80&w=600"
-                alt="Casual"
+                alt="Corrida"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">Casual</span>
+                <span className="text-white text-2xl font-bold">Corrida</span>
               </div>
             </Link>
             <Link to="/products?category=esportivo" className="relative h-64 rounded-lg overflow-hidden">

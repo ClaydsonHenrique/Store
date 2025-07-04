@@ -1,7 +1,48 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { postLogin } from '../services/Api/Api'
+import { ContextToken } from '../Context/ContextApi'
+
 
 export default function Login() {
+  
+   const {setToken} = React.useContext(ContextToken)
+  
+  const [useData, setUseData] = React.useState({
+    email: '',
+    password: ''
+  })
+  const [statusLogin, setStatusLogin] = React.useState(true);
+
+  const navigate = useNavigate();
+
+  const login = async (e) => {
+    e.preventDefault();
+
+    try {
+      const token = await postLogin(useData)
+      if (token.ok || token.token) {
+        setStatusLogin(true)
+        localStorage.setItem('token', token.token)
+        setToken(true)
+        navigate('/')
+      }
+      setStatusLogin(false)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target
+    setUseData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  }
+
+
+
   return (
     <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center  bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 " >
       <div className='max-w-md w-full space-y-8 bg-white p-8 rounded-lg shadow-md' >
@@ -16,7 +57,11 @@ export default function Login() {
             </Link>
           </p>
         </div>
-        <form className='mt-8 space-y-6'>
+        <form className='mt-8 space-y-6' on onSubmit={(e) => login(e)}>
+          {!statusLogin && 
+          <div class="text-sm text-red-800 rounded-lg  dark:text-red-600" role="alert">
+              <p>Email ou senha invalidos.</p>
+          </div>}
           <label htmlFor="email" className="space-y-4 block text-sm font-medium text-gray-700" >
             email:
             <input id="email"
@@ -24,6 +69,7 @@ export default function Login() {
               type="email"
               autoComplete="email"
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              onChange={(e) => handleChange(e)}
             />
           </label>
           <label htmlFor="password">
@@ -33,7 +79,9 @@ export default function Login() {
               name="password"
               type="password"
               autoComplete="current-password"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              onChange={(e) => handleChange(e)}
+            />
           </label>
           <div>
             <div className="flex items-center">
